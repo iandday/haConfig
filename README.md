@@ -19,6 +19,7 @@ Once Ansible is installed perform the following steps to safely store credential
     * `phue.conf`
     * `ecobee.conf`
     * `.vaultCredential`
+    * `.august.conf`
 2. Copy the file [pre-commit.sh](https://raw.githubusercontent.com/iandday/hassConfig/master/pre-commit.sh) to the root directory of your configuration repository and set it as executable.
 3. Create the file `.vaultCredential` in the root directory of your configuration repository.  There should only be one line in the file containing the password used to encrypt your sensitive files.  Make sure to apply appropriate permissions to this file (0600) or stricter.
 4. Enable the pre-commit git hook with the following command from the root of your configuration directory:
