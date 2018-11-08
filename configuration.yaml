@@ -1,0 +1,240 @@
+---
+#
+# configuration.yaml
+#
+
+homeassistant:
+    name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude 
+    elevation: 118
+    unit_system: imperial
+    time_zone: America/New_York
+    customize: !include customize.yaml 
+    whitelist_external_dirs:
+      - /tmp    
+# View all events in a logbook
+logbook:
+  exclude:
+    entities:
+      - automation.update_channel_listings
+
+# Activate the configuration editor
+config:
+# Track the sun
+sun:
+# Enables support for tracking state changes over time.
+history:
+# Allows you to issue voice commands from the frontend
+conversation:
+# Checks for available updates
+updater:
+  include_used_components: true
+  reporting: False
+logger:
+  default: info
+frontend:
+  # extra_html_url:
+  #   - /local/custom_ui/custom-weather-card.html
+  # extra_html_url_es5:
+  #   - /local/custom_ui/custom-weather-card.html
+  themes: !include themes.yaml  
+# Discover some devices automatically
+#discovery:
+     
+automation: !include automations.yaml          
+group: !include groups.yaml
+input_select: !include  input_select.yaml
+input_boolean: !include input_boolean.yaml
+#input_number: !include input_number.yaml
+binary_sensor: !include binary_sensor.yaml
+media_player: !include media.yaml
+script:  !include scripts.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml   
+timer: !include timer.yaml
+remote:
+  - platform: harmony
+    name: Bedroom
+    host: 10.168.1.55
+    port: 5222
+    activity: Kodi
+  - platform: harmony
+    name: Familyroom
+    host: 10.168.1.56
+    port: 5222
+    activity: Kodi 
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_key
+light:
+  - platform: lifx
+    broadcast: 10.168.1.255
+    server: 10.168.1.8
+hue:
+  bridges:
+    - host: 10.168.1.23
+      allow_unreachable: true
+      filename: phue.conf 
+device_tracker:
+  - platform: unifi
+    host: !secret unifi_host
+    port: !secret unifi_port
+    username: !secret unifi_username
+    password: !secret unifi_password
+    #verify_ssl: false
+    track_new_devices: False
+    consider_home: 360
+    interval_seconds: 8
+#device_sun_light_trigger:
+#  light_group: group.presence_lights
+#  light_profile: relax
+#  device_group: group.presence_devices
+#  disable_turn_off: 0   
+http:
+  api_password: !secret api_password
+  use_x_forwarded_for: True
+  cors_allowed_origins:
+    - https://google.com
+    - https://home-assistant.io
+  # trusted_networks:
+  #   - !secret trusted_ip
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+notify:
+  - platform: smtp
+    name: gmail
+    server: smtp.gmail.com
+    port: 587
+    sender: !secret notify_username
+    starttls: True
+    username: !secret notify_username
+    password: !secret notify_password
+    recipient: !secret notify_recipient
+  - platform: nfandroidtv
+    name: family_room_tv_android
+    host: 10.168.1.51
+  - platform: kodi
+    name: family_room_tv
+    host: 10.168.1.51
+  - platform: kodi
+    name: bedroom_tv
+    host: 10.168.1.50
+    username: kodi
+    password: kodi
+  - platform: kodi
+    name: kitchen_tv
+    host: 10.168.1.53
+    username: kodi
+    password: kodi
+  - platform: kodi
+    name: office_tv
+    host: 10.168.1.54
+    username: kodi
+    password: kodi
+  - platform: group
+    name: all_tvs
+    services:
+      - service: family_room_tv_android
+      - service: family_room_tv
+      - service: bedroom_tv
+      - service: kitchen_tv
+      - service: office_tv
+  - name: twitter
+    platform: twitter
+    consumer_key: !secret twitter_consumer_key
+    consumer_secret: !secret twitter_consumer_secret
+    access_token: !secret twitter_access_token
+    access_token_secret: !secret twitter_access_token_secret
+ecobee:
+  api_key: !secret ecobee
+camera:
+  - platform: generic
+    still_image_url: !secret wu_radar
+    name: WundergroundRadar
+  # - platform: mjpeg
+  #   mjpeg_url: !secret blueiris_cam_frontdoor
+  #   name: Front Door
+  #   username: hass
+  #   password: !secret blueiris_password
+  #   authentication: basic
+# splunk:
+  # token: !secret splunk_token
+  # host: !secret splunk_host
+sleepiq:
+  username: !secret sleepiq_email
+  password: !secret sleepiq_password
+tts:
+  - platform: google
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  agent_user_id: !secret google_assistant_agent_user_id
+ # api_key: !secret google_assistant_api_key
+  expose_by_default: false
+  entity_config:
+    light.bedside:
+      name: Nightstand
+      room: Bedroom
+      expose: true
+    light.office:
+      name: Desk
+      room: Office
+      expose: true
+    light.mastercloset:
+      name: Closet
+      room: Bedroom
+      expose: true
+    light.kennel:
+      name: Kennel
+      room: Kennel
+      expose: true
+    switch.bedroom_kodi:
+      name: Bedroom TV
+      room: Bedroom
+      expose: true
+    switch.kitchen_kodi:
+      name: kitchen TV
+      room: Kitchen
+      expose: true
+    switch.office_kodi:
+      name: office TV
+      room: Office
+      expose: true
+    switch.familyroom_kodi:
+      name: Family Room TV
+      room: Family Room
+      expose: true
+    # lock.front_door_lock_locked:
+    #   name: Front Door
+    #   expose: true
+    script.sleep_a:
+      name: Bedtime
+      room: Bedroom
+      expose: true
+media_extractor:
+customizer:
+  custom_ui: local
+weather:
+  - platform: yweather
+    woeid: !secret woeid 
+cover:
+  - platform: myq
+    username: !secret myq_username
+    password: !secret myq_password
+    type: chamberlain
+lutron_caseta_pro:
+    bridges:
+      - host: 10.168.1.26
+        mac: EC:24:B8:8A:88:7b
+        switch: [4, 3, 9 ]
+august:
+  login_method: phone
+  username: !secret august_username
+  password: !secret august_password
+cast:
+  media_player: 
+    - host: 10.168.1.57
+    - host: 10.168.1.61
+    - host: 10.168.1.62

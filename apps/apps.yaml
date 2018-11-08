@@ -1,0 +1,59 @@
+---
+pvr_control_office:
+  module: pvr_control
+  class: DynamicKodiInputSelect
+  target: media_player.office_tv
+  source: input_select.kodi_results_office
+hide_group_office:
+  module: hide_group
+  class: HideGroup
+  entity: switch.office_kodi
+  hidden_value: 'off'
+  group: group.office
+pvr_control_bedroom:
+  module: pvr_control
+  class: DynamicKodiInputSelect
+  target: media_player.bedroom_tv
+  source: input_select.kodi_results_bedroom
+hide_group_bedroom:
+  module: hide_group
+  class: HideGroup
+  entity: switch.bedroom_kodi
+  hidden_value: 'off'
+  group: group.bedroom
+pvr_control_familyroom:
+  module: pvr_control
+  class: DynamicKodiInputSelect
+  target: media_player.familyroom_tv
+  source: input_select.kodi_results_familyroom
+hide_group_familyroom:
+  module: hide_group
+  class: HideGroup
+  entity: switch.familyroom_kodi
+  hidden_value: 'off'
+  group: group.familyroom
+pvr_control_kitchen:
+  module: pvr_control
+  class: DynamicKodiInputSelect
+  target: media_player.kitchen_tv
+  source: input_select.kodi_results_kitchen
+hide_group_kitchen:
+  module: hide_group
+  class: HideGroup
+  entity: switch.kitchen_kodi
+  hidden_value: 'off'
+  group: group.kitchen
+master_closet_motion:
+  module: motion_lights
+  class: MotionLights
+  sensor: binary_sensor.master_closet_motion_sensor
+  entity_on: light.mastercloset
+  delay: 600
+kennel_motion:
+  module: motion_lights
+  class: MotionLights
+  sensor: binary_sensor.kennel_motion
+  entity_on: light.kennel
+  delay: 600
+  constraint_sensor: binary_sensor.kennel_light_activate
+  constraint_value: 'on'

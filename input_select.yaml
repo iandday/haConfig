@@ -1,0 +1,31 @@
+#############################################################################
+#  File: input_select.yaml                                                  #               #
+#  Combo boxes used in Frontend to:                                         #
+#    Control Harmony Hub activities and display current activity            #                                #
+#    Display available television channels and select channel               #
+#############################################################################
+
+familyroom_harmony:
+  name: Harmony Activity
+  options:
+   - Kodi
+   - WatchaMovie
+   - PowerOff
+  initial: PowerOff 
+  icon: mdi:monitor
+kodi_results_familyroom:
+    name: Family Room TV Channels
+    options:
+     - "-"
+kodi_results_kitchen:
+    name: Kitchen TV Channels
+    options:
+     - "-"
+kodi_results_office:
+    name: Office TV Channels
+    options:
+     - "-" 
+kodi_results_bedroom:
+    name: Bedroom TV Channels
+    options:
+     - "-"

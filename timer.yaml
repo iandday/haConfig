@@ -1,0 +1,10 @@
+#################################################################################
+#  File: /config/timer.yaml                                                     #
+#  Timers used in automations                                                   #
+#################################################################################
+master_closet_motion:
+  name: Master Closet Light Timer
+  duration: '00:10:00'   
+kennel_motion:
+  name: Kennel Light Timer
+  duration: '00:10:00' 

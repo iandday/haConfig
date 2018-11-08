@@ -1,0 +1,238 @@
+---
+- id: bedtime
+  alias: 'Bedtime Sleep Timer'
+  trigger:
+    platform: state
+    entity_id: input_boolean.sleep
+    from: 'off'
+    to: 'on'
+  action:
+    service: script.turn_on
+    entity_id: script.sleep_b
+
+- id: lights_on_arrive
+  alias: 'Lights on after dusk when coming home'
+  trigger:
+    platform: state
+    entity_id: group.presence_devices
+    from: 'not_home'
+    to: 'home'
+  condition: 
+    condition: state
+    entity_id: 'sun.sun'
+    state: 'below_horizon'
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.lights_presence
+    data:
+      brightness: 198
+
+- id: garage_notify  
+  alias: 'Forgot to Close Garage'
+  trigger:
+    platform: state
+    entity_id: group.presence_devices
+    from: 'home'
+    to: 'not_home'
+  condition:
+    condition: state
+    entity_id: cover.garage_door_opener
+    state: 'open'  
+  action:
+    - service: notify.gmail
+      data:
+          title: 'Garage Open'
+          message: 'Closing open garage door'
+    - service: cover.close_cover
+      data:
+        entity_id: cover.garage_door_opener
+
+- id: doorbell_notify  
+  alias: 'Doorbell'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door_ding
+    from: 'off'
+    to: 'on'
+  action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.front_door
+        filename: /tmp/snapshot_front_door.jpg
+    - service: notify.gmail
+      data:
+          title: 'Doorbell Ring'
+          message: "Someone's at the front door"
+          data:
+            images: 
+              - /tmp/snapshot_front_door.jpg
+    - service: notify.all_tvs
+      data:
+        title: Doorbell
+        message: Message to KODI from Home Assistant!
+    - service: tts.google_say
+      data:
+        message: Someone is at the door
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.doorbell
+
+
+# - id: doorbell_motion
+#   alias: 'Front Door Motion'
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.front_door_motion
+#     from: 'off'
+#     to: 'on'
+#   action:
+#     - service: camera.snapshot
+#       data:
+#         entity_id: camera.front_door
+#         filename: /tmp/snapshot_front_door.jpg
+#     - service: notify.gmail
+#       data:
+#           title: 'Front Door Motion'
+#           message: "Motion at the front door"
+#           data:
+#             images: 
+#               - /tmp/snapshot_front_door.jpg
+
+- id: leave_home
+  alias: 'Leaving Home'
+  trigger:
+    platform: state
+    entity_id: group.presence_devices
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: script.turn_on
+      entity_id: script.leave    
+
+- id: come_home
+  alias: 'Arriving Home'
+  trigger:
+    platform: state
+    entity_id: group.presence_devices
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: script.turn_on
+      entity_id: script.arrive
+
+- id: speed_test
+  alias: 'Speed Test'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.speedtest_download
+      below: 301
+    - platform: numeric_state
+      entity_id: sensor.speedtest_upload
+      below: 31
+  action:
+    - service: notify.twitter
+      data:
+        message: "My @WOW_WAY service just tested at {{ states('sensor.speedtest_download') }}/{{ states('sensor.speedtest_upload') }}  even though I'm paying for 500/50.  Why should  I pay full price if @WOWCare can't deliver? @IsServiceDown #wideopenwest #speedtest #slowinternet"
+
+- id: new_version
+  alias: 'Available Update'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.gmail
+    data:
+      title: 'Update for Home Assistant is available.'
+      message: 'Available Version: {{states.sensor.ver_current.state}}  Current Version:   {{ states.sensor.ver_installed.state }}'
+
+# Television based automations #
+- id: remote_activity_fr
+  alias: 'Remote start activity familyroom'
+  trigger:
+    platform: state
+    entity_id: input_select.familyroom_harmony
+  action:
+    service: script.turn_on
+    entity_id: script.familyroom_harmony
+
+- id: remote_external_fr
+  alias: 'Remote external update familyroom'
+  trigger:
+    platform: state
+    entity_id: remote.familyroom
+  action:
+    service: input_select.select_option
+    data_template:
+      entity_id: input_select.familyroom_harmony
+      option: >
+        {{ states.remote.familyroom.attributes.current_activity }} 
+
+- id: cron
+  alias: 'Daily/startup jobs'
+  trigger:
+    - platform: time
+      at: '03:15:00'
+    - platform: homeassistant
+      event: start
+  action:
+   - delay: 00:00:30
+   - service: script.turn_on
+     entity_id: script.get_pvr_channels_office
+   - service: script.turn_on
+     entity_id: script.get_pvr_channels_kitchen
+   - service: script.turn_on
+     entity_id: script.get_pvr_channels_bedroom
+   - service: script.turn_on
+     entity_id: script.get_pvr_channels_familyroom     
+   - service: frontend.set_theme
+     data:
+       name: dark
+   - service: group.set_visibility
+     entity_id: group.bedroom, group.office, group.kitchen, group.familyroom
+     data:
+      visible: false
+
+
+- id: zwave ready
+  alias: Zwave initial state
+  trigger:
+    platform: event
+    event_type: zwave.network_ready
+  action: 
+  - service: switch.turn_on
+    entity_id: switch.office_dual_switch_switch_2
+  - service: swtich.turn_on
+    entity_id: switch.kitchen_dual_switch_switch_3
+  - service: switch.turn_on
+    entity_id: switch.bedroom_pi_switch
+
+- id: wakeup
+  alias: 'Wakeup'
+  trigger:
+    platform: state
+    entity_id: input_boolean.awake
+    from: 'off'
+    to: 'on'
+  action:
+    service: script.turn_on
+    entity_id: script.wake
+
+- id: lights_on_at_dusk
+  alias: Turn on lights at dusk
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: group.lights_exterior
+
+- id: lights off at sunrise
+  alias: lights off at sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: group.lights_exterior

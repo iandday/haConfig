@@ -1,0 +1,233 @@
+---
+# groups.yaml
+
+all_bedroom_lights:
+  name: All Bedroom  Lights
+  entities:
+    - light.bedleft
+    - light.bedright
+presence_devices:
+  name: Presence Devices
+  entities:
+    - device_tracker.samsungsmg950u
+default_view:
+  view: yes
+  icon: mdi:home-assistant
+  entities:
+    - group.lights_interior
+    - group.blinds
+    - group.lights_exterior
+    - group.doors
+    - group.climate
+    - group.sleep
+    - group.animated_weather
+    - camera.front_door
+default_entertainment:
+  name: Entertainment
+  view: yes
+  icon: mdi:television
+  entities:
+    - group.tv_control
+    - group.bedroom
+    - group.kitchen
+    - group.office
+    - group.familyroom
+    - group.speakers
+default_weather:
+  name: Weather
+  view: yes
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.weather
+    - group.forecast
+    - camera.wundergroundradar   
+default_system:
+  name: System
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.all_automations
+    - group.ups
+    - group.sensors
+    - group.battery
+    - group.system
+    - group.speed
+doors:
+  name: Doors
+  entities:
+    - cover.garage_door_opener
+    - lock.front_door_lock_locked
+    - lock.garage_door_lock_locked
+lights_interior:
+  name: Interior Lights
+  entities:
+    - light.bedleft
+    - light.bedright
+    - light.mastercloset
+    - light.kennel
+    - light.office
+    - switch.dining_room_light
+    - light.familyroom
+    - light.basement_lights
+lights_exterior:
+  name: Exterior Lights
+  entities:
+    - switch.outside_front_door_light
+    - switch.outside_garage_light
+lights_presence:
+  name: Presence Lights
+  entities:
+    - light.familyroom
+lights_all:
+  name: All Lights
+  entities: 
+    - group.lights_interior
+    - group.lights_exterior
+    - group.lights_presence
+locks:
+  name: locks
+  entities:
+    - lock.front_door_lock_locked
+    - lock.garage_door_lock_locked
+tv_control:
+  name: Watch TV
+  control: hidden
+  entities:
+    - switch.bedroom_kodi
+    - switch.familyroom_kodi
+    - switch.kitchen_kodi
+    - switch.office_kodi
+bedroom:
+  name: Bedroom
+  control: hidden
+  entities:
+    - script.bedroom_tv_sleep
+    - script.bedroom_kodi_stop
+    - input_select.kodi_results_bedroom
+    - media_player.bedroom_tv
+    - script.reboot_bedroom_pi 
+familyroom:
+  name: Family Room
+  control: hidden
+  entities:
+    - script.familyroom_kodi_stop  
+    - input_select.kodi_results_familyroom    
+    - media_player.familyroom_tv
+    - input_select.familyroom_harmony
+kitchen:
+  name: Kitchen
+  control: hidden
+  entities:
+    - script.kitchen_kodi_stop  
+    - input_select.kodi_results_kitchen
+    - media_player.kitchen_tv
+    - script.reboot_kitchen_pi  
+office:
+  name: Office
+  control: hidden
+  entities:
+    - script.office_kodi_stop   
+    - input_select.kodi_results_office    
+    - media_player.office_tv
+    - script.reboot_office_pi
+    - media_player.office_tv_2
+speakers:
+  name: Speakers
+  control: hidden
+  entities:
+    - media_player.bedroom_speaker
+    - media_player.family_room_speaker
+    - media_player.office_speaker
+ups:
+  name: Power
+  entities:
+    - sensor.ups_battery_charge
+    - sensor.ups_input_voltage
+    - sensor.ups_load
+    - sensor.ups_status_data
+sensors:
+  name: Sensors
+  entities:
+    - binary_sensor.downstairs_motion_sensor
+    - binary_sensor.kennel_motion
+    - binary_sensor.master_closet_motion_sensor
+    - binary_sensor.home_occupancy
+battery:
+  name: Battery Levels
+  entities:
+    - sensor.kennel_motion_battery
+    - sensor.master_closet_motion_battery
+    - sensor.frontdoor_lock_battery
+    - sensor.fr_upper_left_window_shade_battery
+    - sensor.fr_upper_left_window_remote_battery
+    - sensor.fr_upper_right_window_shade_battery
+    - sensor.fr_upper_right_window_remote_battery
+
+climate:
+  name: Climate Control
+  entities:
+    - climate.home
+    - sensor.home_temperature
+    - sensor.bedroom_temperature
+    - sensor.kennel_motion_temperature
+    - sensor.master_closet_motion_temperature
+    - sensor.home_humidity  
+    #- switch.switch
+    #- switch.switch_2
+
+weather:
+  name: Weather
+  entities:
+    - sensor.pws_weather
+    - sensor.pws_temp_f
+    - sensor.pws_relative_humidity   
+    - sensor.pws_feelslike_f
+    - sensor.pws_heat_index_f
+    - sensor.pws_temp_high_1d_f
+    - sensor.pws_temp_low_1d_f
+    - sensor.pws_precip_1d
+    - sensor.pws_precip_today_in
+    - sensor.pws_pressure_in
+    - sensor.pws_pressure_trend
+    - sensor.pws_wind_mph
+    - sensor.pws_wind_gust_mph
+    - sensor.pws_wind_dir
+    - sensor.pws_visibility_mi
+    - sensor.pws_uv
+    - sensor.sun
+    - sensor.next_rise
+    - sensor.next_set
+    - sensor.pws_alerts
+    - sensor.pws_observation_time
+forecast:
+  name: Forecast
+  entities:
+    - sensor.pws_weather_1d
+    - sensor.pws_weather_1n
+    - sensor.pws_weather_2d
+    - sensor.pws_weather_2n 
+    - sensor.pws_weather_3d
+    - sensor.pws_weather_3n   
+    - sensor.pws_weather_4d  
+    - sensor.pws_weather_4n
+sleep:
+  name: Sleep
+  entities:
+    - binary_sensor.sleepnumber_bed_ian_is_in_bed
+    - sensor.sleepnumber_bed_ian_sleepnumber
+speed:
+  name: Modem Speed
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+blinds:
+  name: Blinds
+  entities:
+    - cover.fr_upper_left_window_shade
+    - cover.fr_upper_right_window_shade
+# animated_weather:
+#   name: Weather Forecast
+#   view: no
+#   entities:
+#       - input_boolean.weather

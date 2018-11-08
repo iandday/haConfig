@@ -1,0 +1,12 @@
+---
+
+- platform: template
+  sensors:
+    kennel_light_activate:
+      friendly_name: "Kennel Light Activation"
+      value_template: >-
+        {% if states.sun.sun.attributes.elevation  | int  < 15 and states.input_boolean.awake %}
+          True
+        {% else %}
+          False
+        {% endif %}

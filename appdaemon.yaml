@@ -1,0 +1,18 @@
+#############################################################################
+#  File: appdaemon.yaml                                                     #
+#    Appdaemon configuration                                                #
+#############################################################################
+log:
+  logfile: /home/homeassistant/.homeassistant/appdaemon.log
+  errorfile: /home/homeassistant/.homeassistant/appdaemon-error.log
+  logsize: 100000
+  log_generations: 3
+appdaemon:
+  threads: 10
+  api_port: 5000
+  app_dir: /home/homeassistant/.homeassistant/apps
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://10.168.1.8:8123
+      ha_key: !secret api_password

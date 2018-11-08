@@ -1,0 +1,20 @@
+{
+    "1": "light.unnamed_device",
+    "10": "light.bedright",
+    "11": "light.bedside",
+    "12": "switch.familyroom_kodi",
+    "13": "switch.bedroom_kodi",
+    "14": "group.lights",
+    "15": "group.all_bedroom_lights",
+    "16": "light.foyer_light_level",
+    "17": "light.bedroom",
+    "18": "switch.fan",
+    "2": "switch.kitchen_kodi",
+    "3": "light.kitchen",
+    "4": "switch.office_kodi",
+    "5": "script.bedroom_tv_sleep_a",
+    "6": "lock.front_door_lock_locked",
+    "7": "light.hallway",
+    "8": "light.bedleft",
+    "9": "light.lifx_bulb_026411"
+}

@@ -1,0 +1,185 @@
+#######################################################################################
+#  File: customize.yaml                                                               #
+#    Modify display names, icons, and visible/hidden status                           #
+#######################################################################################
+
+switch.dining_room_light:
+  icon: mdi:lightbulb
+switch.outside_front_door_light:
+  icon: mdi:lightbulb
+switch.outside_garage_light:
+  icon: mdi:lightbulb
+light.mastercloset:
+  friendly_name: Master Closet
+light.basement_lights:
+  friendly_name: Basement
+light.bedside:
+  friendly_name: Bedside Lamps
+light.bedleft:
+  friendly_name: Left Bedside Lamp
+light.bedright:
+  friendly_name: Right Bedside Lamp
+group.all_bedroom_lights:
+  hidden: true
+switch.bedroom_kodi:
+  icon: mdi:monitor
+  friendly_name: Bedroom
+switch.kitchen_kodi:
+  icon: mdi:monitor
+  friendly_name: Kitchen
+switch.office_kodi:
+  icon: mdi:monitor
+  friendly_name: Office
+switch.familyroom_kodi:
+  icon: mdi:monitor
+  friendly_name: Family Room
+lock.front_door_lock_locked:
+  friendly_name: Front Door
+script.bedroom_tv_sleep_a:
+  icon: mdi:sleep
+# Z-wave Outlet 1
+switch.switch:
+  icon: mdi:fan
+  friendly_name: Bedroom Fan
+sensor.hank_hkzwso03_smart_plug_current:
+  friendly_name: Bedroom Fan Current
+sensor.hank_hkzwso03_smart_plug_power:
+  friendly_name: Bedroom Fan Watts
+sensor.hank_hkzwso03_smart_plug_previous_reading:
+  friendly_name: Bedroom Fan Previous KWh
+sensor.hank_hkzwso03_smart_plug_voltage:
+  friendly_name: Bedroom Fan VOltage
+# Z-wave Outlet 2
+switch.switch_2:
+  icon: mdi:fan
+  friendly_name: Dehumidifier
+sensor.hank_hkzwso03_smart_plug_current_2:
+  friendly_name: Dehumidifier Current
+sensor.hank_hkzwso03_smart_plug_power_2:
+  friendly_name: Dehumidifier Watts
+sensor.hank_hkzwso03_smart_plug_previous_reading_2:
+  friendly_name: BDehumidifier Previous KWh
+sensor.hank_hkzwso03_smart_plug_voltage_2:
+  friendly_name: BDehumidifier VOltage
+
+binary_sensor.master_closet_motion_sensor:
+  friendly_name: Master Closet Motion
+sensor.master_closet_motion_temperature:
+   friendly_name: Master Closet Temperature
+sensor.kennel_motion_temperature:
+  friendly_name: Kennel Temperature
+binary_sensor.kennel_motion:
+  friendly_name: Kennel Motion
+sensor.harmony_br_status:
+  friendly_name: Current Activity
+  icon: mdi:remote
+sensor.harmony_fr_status:
+  friendly_name: Current Activity
+  icon: mdi:remote
+sensor.next_set:
+  icon: mdi:weather-sunset-down
+sensor.next_rise:
+  icon: mdi:weather-sunset-up
+sensor.sun:
+  icon: mdi:weather-sunny
+    
+switch.kitchen_dual_switch_switch_2:
+  friendly_name: Kitchen TV
+switch.kitchen_dual_switch_switch_3:
+  friendly_name: Kitchen Pi  
+switch.office_dual_switch_switch_4:
+  friendly_name: Office TV  
+switch.office_dual_switch_switch_2:
+  friendly_name: Office Pi
+  
+group.all_automations:
+  hidden: False
+  friendly_name: Automations
+switch.kitchen_outlet_switch:
+  friendly_name: Kitchen TV
+input_select.familyroom_harmony:
+  icon: mdi:remote
+  friendly_name: Activity
+input_select.bedroom_harmony:
+  icon: mdi:remote
+  friendly_name: Activity
+input_select.bedroom_harmony_input:
+  icon: mdi:remote  
+script.bedroom_kodi_stop:
+  icon: mdi:stop
+script.office_kodi_stop:
+  icon: mdi:stop
+script.kitchen_kodi_stop:
+  icon: mdi:stop
+script.familyroom_kodi_stop:
+  icon: mdi:stop
+script.restart_ha:
+  icon: mdi:refresh 
+switch.garage:
+  icon: mdi:garage
+sensor.upstairs_motion_temperature:
+  friendly_name: Second Floor
+sensor.downstairs_motion_temperature:
+  friendly_name: First Floor
+binary_sensor.downstairs_motion_sensor:
+  friendly_name: Downstairs Motion
+binary_sensor.upstairs_motion_sensor:
+  friendly_name: Upstairs Motion
+script.dehumidifier:
+  friendly_name: Dehumidifer - 4 hrs
+  icon: mdi:water-percent
+switch.dehumidifier:
+  icon: mdi:water-percent
+binary_sensor.sleepnumber_bed_ian_is_in_bed:
+  friendly_name: Ian in bed
+  icon: mdi:hotel
+sensor.sleepnumber_bed_ian_sleepnumber:
+  friendly_name: Ian sleepnumber
+  icon: mdi:scale
+media_player.bedroom_speaker:
+  friendly_name: Bedroom Speaker
+sensor.familyroom_motion_battery:
+  custom_ui_state_card: state-card-custom-ui
+  friendly_name: "Downstairs Motion Detector"
+  templates:
+    theme: >
+      if (state < 20) {
+        return 'alert_red';
+      } else if (state < 40) {
+        return 'alert_yellow';
+      }
+sensor.office_motion_battery:
+  custom_ui_state_card: state-card-custom-ui
+  friendly_name: "Upstairs Motion Detector"
+  templates:
+    theme: >
+      if (state < 20) {
+        return 'alert_red';
+      } else if (state < 40) {
+        return 'alert_yellow';
+      }
+sensor.garage_sensor_battery:
+  custom_ui_state_card: state-card-custom-ui
+  friendly_name: "Garage Door Sensor"
+  templates:
+    theme: >
+      if (state < 20) {
+        return 'alert_red';
+      } else if (state < 40) {
+        return 'alert_yellow';
+      }
+sensor.front_door_lock_battery:
+  custom_ui_state_card: state-card-custom-ui
+  friendly_name: "Front Door Lock"
+  templates:
+    theme: >
+      if (state < 20) {
+        return 'alert_red';
+      } else if (state < 40) {
+        return 'alert_yellow';
+      }
+input_boolean.weather:
+  custom_ui_state_card: custom-weather-card
+  config:
+    weather: weather.yweather
+    sun: sun.sun

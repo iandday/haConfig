@@ -1,0 +1,75 @@
+---
+# switches.yaml
+
+- platform: template
+  switches:
+    # activates kodi start/stop script and uses tv power or harmony hub status to determine swtich state
+    bedroom_kodi:
+      friendly_name: 'Watch TV'
+      value_template:  >-
+        {%- if is_state_attr("remote.bedroom", "current_activity", "PowerOff") -%}  
+          off
+        {% else %}
+          on
+        {%- endif %}
+      turn_on:
+        service: script.turn_on
+        entity_id: script.bedroom_tv_on
+      turn_off:
+        service: script.turn_on
+        entity_id: script.bedroom_tv_off    
+    familyroom_kodi:
+      friendly_name: 'Watch TV'
+      value_template:  >-
+        {%- if is_state_attr("remote.familyroom", "current_activity", "PowerOff") -%}
+          off
+        {% else %}
+          on
+        {%- endif %}
+      turn_on:
+        service: script.turn_on
+        entity_id: script.familyroom_tv_on
+      turn_off:
+        service: script.turn_on
+        entity_id: script.familyroom_tv_off    
+    kitchen_kodi:
+      friendly_name: 'Watch TV'
+      value_template:  >-
+        {%- if is_state("switch.kitchen_dual_switch_switch_2", "off") -%}
+          off
+        {% else %}
+          on
+        {%- endif %}
+      turn_on:
+        service: script.turn_on
+        entity_id: script.kitchen_tv_on
+      turn_off:
+        service: script.turn_on
+        entity_id: script.kitchen_tv_off    
+    office_kodi:
+      friendly_name: 'Watch TV'
+      value_template:  >-
+        {%- if is_state("switch.office_dual_switch_switch_4", "on") -%}
+          on
+        {% else %}
+          off
+        {%- endif %}
+      turn_on:
+        service: script.turn_on
+        entity_id: script.office_tv_on
+      turn_off:
+        service: script.turn_on
+        entity_id: script.office_tv_off         
+    # use zwave tilt sensor to dtermine state
+    # garage:
+    #   friendly_name: 'Garage Door Opener'
+    #   value_template:  >-
+    #     {%- if states.sensor.garage_door_reed_alarm_level.state == '255' -%}
+    #       True
+    #     {% else %}
+    #       False
+    #     {%- endif %}
+    #   turn_on:
+    #       service: script.garage_remote
+    #   turn_off:
+    #       service: script.garage_remote

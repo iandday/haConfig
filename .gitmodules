@@ -1,0 +1,3 @@
+[submodule "custom_components/lutron-caseta-pro"]
+	path = custom_components/lutron-caseta-pro
+	url = https://github.com/upsert/lutron-caseta-pro.git

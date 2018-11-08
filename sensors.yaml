@@ -1,0 +1,200 @@
+---
+# sensors.yaml
+
+- platform: wunderground
+  api_key: !secret wunderground_api_key
+  pws_id: !secret wunderground_station_id
+  monitored_conditions:
+    - weather
+    - temp_f
+    - relative_humidity 
+    - feelslike_f
+    - heat_index_f
+    - temp_high_1d_f
+    - temp_low_1d_f
+    - precip_1d
+    - precip_today_in
+    - pressure_in
+    - pressure_trend
+    - wind_mph
+    - wind_gust_mph
+    - wind_dir
+    - visibility_mi
+    - UV
+    - alerts
+    - observation_time
+    - weather_1d
+    - weather_1n
+    - weather_2d
+    - weather_2n 
+    - weather_3d
+    - weather_3n 
+    - weather_4d
+    - weather_4n
+
+- platform: nut
+  name: ups
+  host: !secret ups_addr
+  #username: !secret ups_user
+  #password: !secret ups_pass
+  alias: ups
+  resources:
+    - ups.status
+    - ups.load
+    - input.voltage
+    - battery.charge
+
+# HASS versions installed and available for notifications    
+- platform: command_line
+  command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+  name: ver_current
+  scan_interval: 86400
+- platform: command_line
+  command: /srv/homeassistant/bin/hass --version
+  name: ver_installed
+  scan_interval: 86400
+
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  minute:
+    - 0
+    - 15
+    - 30
+    - 45
+
+# Teamplate sensors 
+#   Battery life from z-wave devices
+#   Sun attributes: rise, set, state
+
+- platform: template
+  sensors:
+    master_closet_motion_battery:
+      value_template: '{{ states.zwave.master_closet_motion.attributes.battery_level }}'
+      friendly_name: 'Master Closet Motion Detector'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.master_closet_motion.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    kennel_motion_battery:
+      value_template: '{{states.zwave.kennel_motion.attributes.battery_level}}'
+      friendly_name: 'Kennel Motion Detector'
+      unit_of_measurement: '%'
+      icon_template: >
+        {% set battery_level = states.zwave.kennel_motion.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}        
+    # garage_sensor_battery:
+    #   value_template: '{{states.zwave.garage_door_reed.attributes.battery_level}}'
+    #   friendly_name: 'Garage Door Sensor'
+    #   unit_of_measurement: '%'
+    #   icon_template: >
+    #     {% set battery_level = states.zwave.garage_door_reed.attributes.battery_level|default(0)|int %}
+    #     {% set battery_round = (battery_level / 10) |int * 10 %}
+    #     {% if battery_round >= 100 %}
+    #       mdi:battery
+    #     {% elif battery_round > 0 %}
+    #       mdi:battery-{{ battery_round }}
+    #     {% else %}
+    #       mdi:battery-alert
+    #     {% endif %}
+    frontdoor_lock_battery:
+      value_template: '{{states.zwave.front_door_lock.attributes.battery_level}}'
+      friendly_name: 'Front Door Lock'
+      unit_of_measurement: '%'
+      icon_template: >
+        {% set battery_level = states.zwave.front_door_lock.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    fr_upper_left_window_shade_battery:
+      value_template: '{{ states.zwave.fr_upper_left_window_shade.attributes.battery_level }}'
+      friendly_name: 'Family Room Left Blind'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.fr_upper_left_window_shade.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    fr_upper_right_window_shade_battery:
+      value_template: '{{ states.zwave.fr_upper_right_window_shade.attributes.battery_level }}'
+      friendly_name: 'Family Room Right Blind'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.fr_upper_right_window_shade.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    fr_upper_left_window_remote_battery:
+      value_template: '{{ states.zwave.fr_upper_left_window_remote.attributes.battery_level }}'
+      friendly_name: 'Family Room Left Blind Remote'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.fr_upper_left_window_remote.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    fr_upper_right_window_remote_battery:
+      value_template: '{{ states.zwave.fr_upper_right_window_remote.attributes.battery_level }}'
+      friendly_name: 'Family Room Right Blind Remote'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.cover.fr_upper_right_window_remote.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    next_set:
+      value_template: '{{ (as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_local).split(" ")[1] }}'
+      friendly_name: 'Next Sunset'
+    next_rise:
+      value_template: '{{ (as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_local).split(" ")[1] }}'
+      friendly_name: 'Next Sunrise'
+    sun:
+      value_template: >-
+          {%- if states.sun.sun.state == 'above_horizon'  -%}
+            Up
+          {%- else -%}
+            Down
+          {%- endif %}
+          
+      friendly_name: 'Sun' 

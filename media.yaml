@@ -1,0 +1,33 @@
+#############################################################################
+#  File: media.yaml                                                         #
+#    Media platforms in use                                                 #
+#############################################################################
+- platform: kodi
+  host: 10.168.1.50
+  port: 8080
+  name: Bedroom TV
+  username: kodi
+  password: kodi
+- platform: kodi
+  host: 10.168.1.51
+  port: 8080
+  name: FamilyRoom TV
+  username: kodi
+  password: kodi
+- platform: kodi
+  host: 10.168.1.53
+  port: 8080
+  name: Kitchen TV
+  username: kodi
+  password: kodi
+- platform: kodi
+  host: 10.168.1.54
+  port: 8080
+  name: Office TV
+  username: kodi
+  password: kodi
+# - platform: cast
+#   host: 10.168.1.57
+# - platform: cast
+#   host: 10.168.1.58
+  
