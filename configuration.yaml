@@ -87,7 +87,9 @@ light:
     entities:
       - light.foyer_middle_light_level
       - light.front_foyer
-
+  - platform: switch
+    name: Kitchen
+    entity_id: switch.kitchen_light
 
 device_tracker:
   - platform: unifi

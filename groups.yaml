@@ -78,7 +78,7 @@ lights_interior:
     - light.upstairs_hallway
     - light.stairs
     - light.foyer
-    - switch.kitchen_light
+    - light.kitchen
     - switch.dining_room_light
     - light.familyroom
     - light.basement_lights
