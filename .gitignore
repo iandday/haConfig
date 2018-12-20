@@ -15,6 +15,13 @@ options.xml
 ecobee.conf
 .vaultCredential
 .august.conf
+.ios.conf
+.storage/onboarding
+.storage/core.entity_registry
+.storage/core.device_registry
+.storage/core.config_entries
+.storage/auth_provider.homeassistant
+.storage/auth
 
 #logs
 pyozw.sqlite

@@ -4,7 +4,7 @@
 #   files will be encrypted with the string located in the file .vaultCredential
 #   additional files can be added to the array, space delimited and surrounded in quotes
 
-for i in "secrets.yaml" "phue.conf" "ecobee.conf" ".august.conf"
+for i in "secrets.yaml" "phue.conf" "ecobee.conf" ".august.conf" ".ios.conf" ".storage/onboarding" ".storage/core.entity_registry" ".storage/core.device_registry" ".storage/core.config_entries" ".storage/auth_provider.homeassistant" ".storage/auth"
 do
    if [ -f "$i" ]
    then

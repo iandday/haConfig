@@ -30,4 +30,3 @@ Once Ansible is installed perform the following steps to safely store credential
 ## Customizations
 * [Custom Battery Levels](https://bonani.tech/track-battery-levels-with-home-assistant-and-custom-ui/)
 *  [Animated Forecast](https://www.reddit.com/r/homeassistant/comments/8dnxf0/_/)
-*  [Amazon Dash Button Doorbell](https://community.home-assistant.io/t/capture-amazon-dash-button-press/4467/15)
