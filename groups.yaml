@@ -9,7 +9,7 @@ all_bedroom_lights:
 presence_devices:
   name: Presence Devices
   entities:
-    - device_tracker.samsungsmg950u
+    - device_tracker.iansiphone
 default_view:
   view: yes
   icon: mdi:home-assistant
@@ -20,8 +20,6 @@ default_view:
     - group.doors
     - group.climate
     - group.sleep
-    - group.animated_weather
-    - camera.front_door
 default_entertainment:
   name: Entertainment
   view: yes
@@ -40,7 +38,16 @@ default_weather:
   entities:
     - group.weather
     - group.forecast
-    - camera.wundergroundradar   
+    - camera.wundergroundradar  
+default_cctv:
+  name: cctv
+  view: yes
+  icon: mdi:camera
+  entities:
+    - group.cam1
+    - group.cam2
+    - group.cam3
+    - group.cam4 
 default_system:
   name: System
   view: yes
@@ -57,27 +64,37 @@ doors:
   entities:
     - cover.garage_door_opener
     - lock.front_door_lock_locked
+    - binary_sensor.front_door
     - lock.garage_door_lock_locked
+    - binary_sensor.interior_garage_door
+    - binary_sensor.gate
 lights_interior:
   name: Interior Lights
   entities:
-    - light.bedleft
-    - light.bedright
+    - light.bedside
     - light.mastercloset
     - light.kennel
     - light.office
+    - light.upstairs_hallway
+    - light.stairs
+    - light.foyer
+    - switch.kitchen_light
     - switch.dining_room_light
     - light.familyroom
     - light.basement_lights
+    - light.basementstairs
+    - light.garage_light
 lights_exterior:
   name: Exterior Lights
   entities:
     - switch.outside_front_door_light
     - switch.outside_garage_light
+    - switch.porch_light
 lights_presence:
   name: Presence Lights
   entities:
     - light.familyroom
+    - light.foyer
 lights_all:
   name: All Lights
   entities: 
@@ -151,6 +168,7 @@ sensors:
     - binary_sensor.downstairs_motion_sensor
     - binary_sensor.kennel_motion
     - binary_sensor.master_closet_motion_sensor
+    - binary_sensor.basement_door
     - binary_sensor.home_occupancy
 battery:
   name: Battery Levels
@@ -158,10 +176,14 @@ battery:
     - sensor.kennel_motion_battery
     - sensor.master_closet_motion_battery
     - sensor.frontdoor_lock_battery
+    - sensor.garagedoor_lock_battery
     - sensor.fr_upper_left_window_shade_battery
     - sensor.fr_upper_left_window_remote_battery
     - sensor.fr_upper_right_window_shade_battery
     - sensor.fr_upper_right_window_remote_battery
+    - sensor.interior_garage_door_battery
+    - sensor.basement_door_battery
+    - sensor.front_door_battery
 
 climate:
   name: Climate Control
@@ -178,38 +200,38 @@ climate:
 weather:
   name: Weather
   entities:
-    - sensor.pws_weather
-    - sensor.pws_temp_f
-    - sensor.pws_relative_humidity   
-    - sensor.pws_feelslike_f
-    - sensor.pws_heat_index_f
-    - sensor.pws_temp_high_1d_f
-    - sensor.pws_temp_low_1d_f
-    - sensor.pws_precip_1d
-    - sensor.pws_precip_today_in
-    - sensor.pws_pressure_in
-    - sensor.pws_pressure_trend
-    - sensor.pws_wind_mph
-    - sensor.pws_wind_gust_mph
-    - sensor.pws_wind_dir
-    - sensor.pws_visibility_mi
-    - sensor.pws_uv
+    #- sensor.pws_weather
+    - sensor.pws_temp_f_2
+    - sensor.pws_relative_humidity_2
+    - sensor.pws_feelslike_f_2
+    #- sensor.pws_heat_index_f
+    - sensor.pws_temp_high_1d_f_2
+    - sensor.pws_temp_low_1d_f_2
+    #- sensor.pws_precip_1d
+   # - sensor.pws_precip_today_in
+   # - sensor.pws_pressure_in
+   # - sensor.pws_pressure_trend
+    - sensor.pws_wind_mph_2
+    - sensor.pws_wind_gust_mph_2
+    - sensor.pws_wind_dir_2
+    - sensor.pws_visibility_mi_2
+    - sensor.pws_uv_2
     - sensor.sun
     - sensor.next_rise
     - sensor.next_set
     - sensor.pws_alerts
-    - sensor.pws_observation_time
+    #- sensor.pws_observation_time
 forecast:
   name: Forecast
   entities:
-    - sensor.pws_weather_1d
-    - sensor.pws_weather_1n
-    - sensor.pws_weather_2d
-    - sensor.pws_weather_2n 
-    - sensor.pws_weather_3d
-    - sensor.pws_weather_3n   
-    - sensor.pws_weather_4d  
-    - sensor.pws_weather_4n
+    - sensor.pws_weather_1d_2
+    - sensor.pws_weather_1n_2
+    - sensor.pws_weather_2d_2
+    - sensor.pws_weather_2n_2 
+    - sensor.pws_weather_3d_2
+    - sensor.pws_weather_3n_2 
+    - sensor.pws_weather_4d_2  
+    - sensor.pws_weather_4n_2
 sleep:
   name: Sleep
   entities:
@@ -226,8 +248,19 @@ blinds:
   entities:
     - cover.fr_upper_left_window_shade
     - cover.fr_upper_right_window_shade
-# animated_weather:
-#   name: Weather Forecast
-#   view: no
-#   entities:
-#       - input_boolean.weather
+cam1:
+  name: cam1
+  entities:
+    - camera.front
+cam2:
+  name: cam2
+  entities:
+    - camera.front_door
+cam3:
+  name: cam3
+  entities:
+    - camera.backyard_south
+cam4:
+  name: cam4
+  entities:
+    - camera.backyard_north   

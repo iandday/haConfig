@@ -35,7 +35,6 @@ arrive:
   - service: lock.unlock
     data:
       entity_id: lock.garage_door_lock_locked
-
 reboot_bedroom_pi:
   alias: Reboot Pi
   sequence:
@@ -69,7 +68,6 @@ reboot_office_pi:
   - service: switch.turn_on
     data:
       entity_id: switch.office_dual_switch_switch_2
-
 familyroom_tv_on:
   alias: Familyroom TV On
   sequence:
@@ -83,8 +81,7 @@ familyroom_tv_on:
     data:
       entity_id: media_player.familyroom_tv
       media_content_type: CHANNEL
-      media_content_id: 66
-
+      media_content_id: 132
 bedroom_tv_on:
   alias: Bedroom TV On
   sequence:
@@ -95,8 +92,7 @@ bedroom_tv_on:
     data:
       entity_id: media_player.bedroom_tv
       media_content_type: CHANNEL
-      media_content_id: 66
-
+      media_content_id: 132
 kitchen_tv_on:
   alias: Kitchen Tv On
   sequence:
@@ -107,8 +103,7 @@ kitchen_tv_on:
     data:
       entity_id: media_player.kitchen_tv
       media_content_type: CHANNEL
-      media_content_id: 39
-
+      media_content_id: 22
 office_tv_on:
   alias: Office Tv On
   sequence:
@@ -119,8 +114,7 @@ office_tv_on:
     data:
       entity_id: media_player.office_tv
       media_content_type: CHANNEL
-      media_content_id: 66
-
+      media_content_id: 22
 familyroom_tv_off:
   alias: Turn Off
   sequence:
@@ -130,7 +124,6 @@ familyroom_tv_off:
   - service: remote.turn_off
     data:
       entity_id: remote.familyroom
-
 bedroom_tv_off:
   alias: Turn Off
   sequence:
@@ -140,7 +133,6 @@ bedroom_tv_off:
   - service: remote.turn_off
     data:
       entity_id: remote.bedroom
-
 kitchen_tv_off:
   alias: Turn Off
   sequence:
@@ -150,7 +142,6 @@ kitchen_tv_off:
   - service: switch.turn_off
     data:
       entity_id: switch.kitchen_dual_switch_switch_2
-
 office_tv_off:
   alias: Turn Off
   sequence:
@@ -160,7 +151,6 @@ office_tv_off:
   - service: media_player.media_stop
     data:
       entity_id: media_player.office_tv
-
 familyroom_harmony:
   alias: Start activity from input select
   sequence:
@@ -171,35 +161,30 @@ familyroom_harmony:
         ) %}\n    -1\n{% elif is_state(\"input_select.familyroom_harmony\", \"Kodi\"\
         ) %}\n    19534382\n{% elif is_state(\"input_select.familyroom_harmony\",\
         \ \"WatchaMovie\") %}\n    17923212\n{% endif %} \n"
-
 office_kodi_stop:
   alias: Stop
   sequence:
   - service: media_player.media_stop
     data:
       entity_id: media_player.office_tv
-
 kitchen_kodi_stop:
   alias: Stop
   sequence:
   - service: media_player.media_stop
     data:
       entity_id: media_player.kitchen_tv
-
 bedroom_kodi_stop:
   alias: Stop
   sequence:
   - service: media_player.media_stop
     data:
       entity_id: media_player.bedroom_tv
-
 familyroom_kodi_stop:
   alias: Stop
   sequence:
   - service: media_player.media_stop
     data:
       entity_id: media_player.familyroom_tv
-
 get_pvr_channels_office:
   alias: Office TV Channels
   sequence:
@@ -208,7 +193,6 @@ get_pvr_channels_office:
       entity_id: media_player.office_tv
       method: PVR.GetChannels
       channelgroupid: 1
-
 get_pvr_channels_kitchen:
   alias: Kitchen TV Channels
   sequence:
@@ -217,7 +201,6 @@ get_pvr_channels_kitchen:
       entity_id: media_player.kitchen_tv
       method: PVR.GetChannels
       channelgroupid: 1
-
 get_pvr_channels_bedroom:
   alias: Bedroom TV Channels
   sequence:
@@ -226,7 +209,6 @@ get_pvr_channels_bedroom:
       entity_id: media_player.bedroom_tv
       method: PVR.GetChannels
       channelgroupid: 1
-
 get_pvr_channels_familyroom:
   alias: Famiylroom TV Channels
   sequence:
@@ -235,7 +217,6 @@ get_pvr_channels_familyroom:
       entity_id: media_player.familyroom_tv
       method: PVR.GetChannels
       channelgroupid: 1
-
 sleep_a:
   alias: Sleep Part 1
   sequence:
@@ -248,7 +229,7 @@ sleep_a:
   - service: media_player.play_media
     data:
       entity_id: media_player.bedroom_tv
-      media_content_id: 54
+      media_content_id: 68
       media_content_type: CHANNEL
   - service: light.turn_off
     data:
@@ -258,7 +239,6 @@ sleep_a:
       brightness_pct: 45
       color_name: red
       entity_id: light.bedside
-
 sleep_b:
   alias: Sleep Part 2
   sequence:
@@ -273,7 +253,6 @@ sleep_b:
   - service: remote.turn_off
     data:
       entity_id: remote.bedroom
-
 wake:
   alias: Wakeup
   sequence:
@@ -282,9 +261,16 @@ wake:
       entity_id: input_boolean.sleep
   - service: light.turn_on
     data:
-      brightness_pct: 50
+      brightness_pct: 40
       color_name: white
       entity_id: light.bedside
+  - service: light.turn_on
+    data:
+      brightness_pct: 50
+      entity_id:
+        - light.stairs
+        - light.foyer
   - service: tts.google_say
+    entity_id: media_player.bedroom_speaker
     data:
       message: It's time to wakeup

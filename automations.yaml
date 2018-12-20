@@ -1,5 +1,6 @@
 ---
 - id: bedtime
+  initial_state: True
   alias: 'Bedtime Sleep Timer'
   trigger:
     platform: state
@@ -11,7 +12,8 @@
     entity_id: script.sleep_b
 
 - id: lights_on_arrive
-  alias: 'Lights on after dusk when coming home'
+  initial_state: True
+  alias: 'Lights on when coming home'
   trigger:
     platform: state
     entity_id: group.presence_devices
@@ -24,10 +26,9 @@
   action:
     service: homeassistant.turn_on
     entity_id: group.lights_presence
-    data:
-      brightness: 198
 
 - id: garage_notify  
+  initial_state: True
   alias: 'Forgot to Close Garage'
   trigger:
     platform: state
@@ -47,17 +48,18 @@
       data:
         entity_id: cover.garage_door_opener
 
-- id: doorbell_notify  
+- id: doorbell_notify
+  initial_state: True  
   alias: 'Doorbell'
   trigger:
     platform: state
-    entity_id: binary_sensor.front_door_ding
+    entity_id: binary_sensor.garage_door_doorbell_ding
     from: 'off'
     to: 'on'
   action:
     - service: camera.snapshot
       data:
-        entity_id: camera.front_door
+        entity_id: camera.garage_door_doorbell
         filename: /tmp/snapshot_front_door.jpg
     - service: notify.gmail
       data:
@@ -73,32 +75,9 @@
     - service: tts.google_say
       data:
         message: Someone is at the door
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.doorbell
-
-
-# - id: doorbell_motion
-#   alias: 'Front Door Motion'
-#   trigger:
-#     platform: state
-#     entity_id: binary_sensor.front_door_motion
-#     from: 'off'
-#     to: 'on'
-#   action:
-#     - service: camera.snapshot
-#       data:
-#         entity_id: camera.front_door
-#         filename: /tmp/snapshot_front_door.jpg
-#     - service: notify.gmail
-#       data:
-#           title: 'Front Door Motion'
-#           message: "Motion at the front door"
-#           data:
-#             images: 
-#               - /tmp/snapshot_front_door.jpg
 
 - id: leave_home
+  initial_state: True
   alias: 'Leaving Home'
   trigger:
     platform: state
@@ -110,6 +89,7 @@
       entity_id: script.leave    
 
 - id: come_home
+  initial_state: True
   alias: 'Arriving Home'
   trigger:
     platform: state
@@ -121,20 +101,22 @@
       entity_id: script.arrive
 
 - id: speed_test
+  initial_state: True
   alias: 'Speed Test'
   trigger:
     - platform: numeric_state
       entity_id: sensor.speedtest_download
-      below: 301
+      below: 75
     - platform: numeric_state
       entity_id: sensor.speedtest_upload
-      below: 31
+      below: 8
   action:
     - service: notify.twitter
       data:
-        message: "My @WOW_WAY service just tested at {{ states('sensor.speedtest_download') }}/{{ states('sensor.speedtest_upload') }}  even though I'm paying for 500/50.  Why should  I pay full price if @WOWCare can't deliver? @IsServiceDown #wideopenwest #speedtest #slowinternet"
+        message: "My @WOW_WAY service just tested at {{ states('sensor.speedtest_download') }}/{{ states('sensor.speedtest_upload') }}  even though I'm paying for 100/10.  Why should  I pay full price if @WOWCare can't deliver? @IsServiceDown #wideopenwest #speedtest #slowinternet"
 
 - id: new_version
+  initial_state: True
   alias: 'Available Update'
   trigger:
     platform: state
@@ -147,6 +129,7 @@
 
 # Television based automations #
 - id: remote_activity_fr
+  initial_state: True
   alias: 'Remote start activity familyroom'
   trigger:
     platform: state
@@ -156,6 +139,7 @@
     entity_id: script.familyroom_harmony
 
 - id: remote_external_fr
+  initial_state: True
   alias: 'Remote external update familyroom'
   trigger:
     platform: state
@@ -168,7 +152,8 @@
         {{ states.remote.familyroom.attributes.current_activity }} 
 
 - id: cron
-  alias: 'Daily/startup jobs'
+  initial_state: True
+  alias: 'Cron'
   trigger:
     - platform: time
       at: '03:15:00'
@@ -192,9 +177,9 @@
      data:
       visible: false
 
-
 - id: zwave ready
-  alias: Zwave initial state
+  initial_state: True
+  alias: Zwave Initialization
   trigger:
     platform: event
     event_type: zwave.network_ready
@@ -207,6 +192,7 @@
     entity_id: switch.bedroom_pi_switch
 
 - id: wakeup
+  initial_state: True
   alias: 'Wakeup'
   trigger:
     platform: state
@@ -218,6 +204,7 @@
     entity_id: script.wake
 
 - id: lights_on_at_dusk
+  initial_state: True
   alias: Turn on lights at dusk
   trigger:
     platform: sun
@@ -228,6 +215,7 @@
       entity_id: group.lights_exterior
 
 - id: lights off at sunrise
+  initial_state: True
   alias: lights off at sunrise
   trigger:
     platform: sun

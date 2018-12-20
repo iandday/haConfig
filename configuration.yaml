@@ -4,21 +4,24 @@
 #
 
 homeassistant:
-    name: Home
-    latitude: !secret latitude
-    longitude: !secret longitude 
-    elevation: 118
-    unit_system: imperial
-    time_zone: America/New_York
-    customize: !include customize.yaml 
-    whitelist_external_dirs:
-      - /tmp    
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude 
+  elevation: 118
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include customize.yaml 
+  whitelist_external_dirs:
+    - /tmp    
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+   - type: trusted_networks
 # View all events in a logbook
 logbook:
   exclude:
     entities:
       - automation.update_channel_listings
-
 # Activate the configuration editor
 config:
 # Track the sun
@@ -33,6 +36,8 @@ updater:
   reporting: False
 logger:
   default: info
+  #logs:
+  #  august.api: debug
 frontend:
   # extra_html_url:
   #   - /local/custom_ui/custom-weather-card.html
@@ -40,8 +45,8 @@ frontend:
   #   - /local/custom_ui/custom-weather-card.html
   themes: !include themes.yaml  
 # Discover some devices automatically
-#discovery:
-     
+discovery:
+ios:     
 automation: !include automations.yaml          
 group: !include groups.yaml
 input_select: !include  input_select.yaml
@@ -67,15 +72,23 @@ remote:
 zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret zwave_key
-light:
-  - platform: lifx
-    broadcast: 10.168.1.255
-    server: 10.168.1.8
 hue:
   bridges:
     - host: 10.168.1.23
       allow_unreachable: true
       filename: phue.conf 
+lifx:
+  light:
+    broadcast: 10.168.1.255
+    server: 10.168.1.8
+light:
+  - platform: group
+    name: Foyer
+    entities:
+      - light.foyer_middle_light_level
+      - light.front_foyer
+
+
 device_tracker:
   - platform: unifi
     host: !secret unifi_host
@@ -93,14 +106,15 @@ device_tracker:
 #  disable_turn_off: 0   
 http:
   api_password: !secret api_password
-  use_x_forwarded_for: True
-  cors_allowed_origins:
-    - https://google.com
-    - https://home-assistant.io
-  # trusted_networks:
-  #   - !secret trusted_ip
-  ip_ban_enabled: True
-  login_attempts_threshold: 5
+  #use_x_forwarded_for: True
+  #cors_allowed_origins:
+  #  - https://google.com
+  #  - https://home-assistant.io
+  trusted_networks:
+    - 10.168.1.127
+    - 10.168.1.32
+  #ip_ban_enabled: True
+  #login_attempts_threshold: 5
 notify:
   - platform: smtp
     name: gmail
@@ -152,12 +166,24 @@ camera:
   - platform: generic
     still_image_url: !secret wu_radar
     name: WundergroundRadar
-  # - platform: mjpeg
-  #   mjpeg_url: !secret blueiris_cam_frontdoor
-  #   name: Front Door
-  #   username: hass
-  #   password: !secret blueiris_password
-  #   authentication: basic
+  - platform: mjpeg
+    mjpeg_url: !secret blueiris_cam_front
+    name: Front
+    username: hass
+    password: !secret blueiris_password
+    authentication: basic
+  - platform: mjpeg
+    mjpeg_url: !secret blueiris_cam_backyardnorth
+    name: Backyard North
+    username: hass
+    password: !secret blueiris_password
+    authentication: basic
+  - platform: mjpeg
+    mjpeg_url: !secret blueiris_cam_backyardsouth
+    name: Backyard South
+    username: hass
+    password: !secret blueiris_password
+    authentication: basic
 # splunk:
   # token: !secret splunk_token
   # host: !secret splunk_host
@@ -168,10 +194,7 @@ tts:
   - platform: google
 google_assistant:
   project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id: !secret google_assistant_agent_user_id
- # api_key: !secret google_assistant_api_key
+  api_key: !secret google_assistant_api_key
   expose_by_default: false
   entity_config:
     light.bedside:
@@ -214,8 +237,8 @@ google_assistant:
       room: Bedroom
       expose: true
 media_extractor:
-customizer:
-  custom_ui: local
+# customizer:
+#   custom_ui: local
 weather:
   - platform: yweather
     woeid: !secret woeid 

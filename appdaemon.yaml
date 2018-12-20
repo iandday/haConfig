@@ -15,4 +15,4 @@ appdaemon:
     HASS:
       type: hass
       ha_url: http://10.168.1.8:8123
-      ha_key: !secret api_password
+      token: !secret appd_token

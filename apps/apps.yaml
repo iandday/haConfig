@@ -37,7 +37,7 @@ pvr_control_kitchen:
   class: DynamicKodiInputSelect
   target: media_player.kitchen_tv
   source: input_select.kodi_results_kitchen
-hide_group_kitchen:
+# hide_group_kitchen:
   module: hide_group
   class: HideGroup
   entity: switch.kitchen_kodi
@@ -57,3 +57,17 @@ kennel_motion:
   delay: 600
   constraint_sensor: binary_sensor.kennel_light_activate
   constraint_value: 'on'
+basement_light:
+  module: motion_lights
+  class: MotionLights
+  sensor:  binary_sensor.basement_door
+  entity_on: light.basementstairs
+  delay: 600
+garage_light:
+  module: motion_lights
+  class: MotionLights
+  sensor: binary_sensor.interior_garage_door
+  entity_on: light.garage_light
+  delay: 600
+  constraint_sensor: cover.garage_door_opener
+  constraint_value: 'closed'

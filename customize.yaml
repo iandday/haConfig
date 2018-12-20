@@ -19,6 +19,22 @@ light.bedleft:
   friendly_name: Left Bedside Lamp
 light.bedright:
   friendly_name: Right Bedside Lamp
+light.basementstairs:
+  friendly_name: Basement Stairs
+switch.foyer_middle_light:
+  friendly_name: Middle Foyer
+  icon: mdi:lightbulb
+light.front_foyer:
+  friendly_name: Foyer Front
+group.foyer_lights:
+  friendly_name: Foyer
+  icon: mdi:lightbulb
+
+light.garage_light:
+  friendly_name: Garage
+switch.porch_light:
+  friendly_name: Porch
+  icon: mdi:lightbulb 
 group.all_bedroom_lights:
   hidden: true
 switch.bedroom_kodi:

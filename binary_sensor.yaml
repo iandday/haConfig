@@ -10,3 +10,39 @@
         {% else %}
           False
         {% endif %}
+    gate:
+      friendly_name: "Fence Gate"
+      device_class: door
+      value_template: >-
+        {% if states.sensor.sensative_strips_access_control.state | int == 22  %}
+          True
+        {% else %}
+          False
+        {% endif %}
+    basement_door:
+      friendly_name: "Basement Door"
+      device_class: door
+      value_template: >-
+        {% if states.sensor.basement_door_alarm_level.state | int == 0  %}
+          False
+        {% else %}
+          True
+        {% endif %}
+    interior_garage_door:
+      friendly_name: "Garage Door"
+      device_class: door
+      value_template: >-
+        {% if states.sensor.interior_garage_door_alarm_level.state | int == 0  %}
+          False
+        {% else %}
+          True
+        {% endif %}
+    front_door:
+      friendly_name: "Front Door"
+      device_class: door
+      value_template: >-
+        {% if states.sensor.front_door_alarm_level.state | int == 0  %}
+          False
+        {% else %}
+          True
+        {% endif %}

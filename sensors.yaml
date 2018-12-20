@@ -60,10 +60,7 @@
     - download
     - upload
   minute:
-    - 0
-    - 15
     - 30
-    - 45
 
 # Teamplate sensors 
 #   Battery life from z-wave devices
@@ -127,6 +124,20 @@
         {% else %}
           mdi:battery-alert
         {% endif %}
+    garagedoor_lock_battery:
+      value_template: '{{states.zwave.garage_door_lock.attributes.battery_level}}'
+      friendly_name: 'Garage Door Lock'
+      unit_of_measurement: '%'
+      icon_template: >
+        {% set battery_level = states.zwave.garage_door_lock.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
     fr_upper_left_window_shade_battery:
       value_template: '{{ states.zwave.fr_upper_left_window_shade.attributes.battery_level }}'
       friendly_name: 'Family Room Left Blind'
@@ -174,7 +185,49 @@
       friendly_name: 'Family Room Right Blind Remote'
       unit_of_measurement: '%'     
       icon_template: >
-        {% set battery_level = states.zwave.cover.fr_upper_right_window_remote.attributes.battery_level|default(0)|int %}
+        {% set battery_level = states.zwave.fr_upper_right_window_remote.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    interior_garage_door_battery:
+      value_template: '{{ states.zwave.interior_garage_door.attributes.battery_level }}'
+      friendly_name: 'Interior Garage Door'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.interior_garage_door.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    basement_door_battery:
+      value_template: '{{ states.zwave.basement_door.attributes.battery_level }}'
+      friendly_name: 'Basement Door'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.basement_door.attributes.battery_level|default(0)|int %}
+        {% set battery_round = (battery_level / 10) |int * 10 %}
+        {% if battery_round >= 100 %}
+          mdi:battery
+        {% elif battery_round > 0 %}
+          mdi:battery-{{ battery_round }}
+        {% else %}
+          mdi:battery-alert
+        {% endif %}
+    front_door_battery:
+      value_template: '{{ states.zwave.front_door.attributes.battery_level }}'
+      friendly_name: 'Front Door'
+      unit_of_measurement: '%'     
+      icon_template: >
+        {% set battery_level = states.zwave.front_door.attributes.battery_level|default(0)|int %}
         {% set battery_round = (battery_level / 10) |int * 10 %}
         {% if battery_round >= 100 %}
           mdi:battery

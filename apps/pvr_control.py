@@ -1,6 +1,4 @@
 import appdaemon.plugins.hass.hassapi as hass
-from homeassistant.components.media_player.kodi import (
-    EVENT_KODI_CALL_METHOD_RESULT)
 
 
 #
@@ -18,6 +16,7 @@ from homeassistant.components.media_player.kodi import (
 
 DEFAULT_ACTION = '-'
 MAX_RESULTS = 80
+EVENT_KODI_CALL_METHOD_RESULT = 'kodi_call_method_result'
 
 class DynamicKodiInputSelect(hass.Hass):
 
@@ -29,7 +28,7 @@ class DynamicKodiInputSelect(hass.Hass):
                           EVENT_KODI_CALL_METHOD_RESULT)
         self.listen_state(self._change_selected_option, self._source)
         self._ids_options = {DEFAULT_ACTION: None}
-        self.log('Initialization complete, monitoring: ' + self._source, level = 'DEBUG')
+        self.log('Initialization complete, monitoring:' + self._source, level = 'DEBUG')
 
 
     def _receive_kodi_result(self, event_id, payload_event, *args):

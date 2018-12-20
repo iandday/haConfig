@@ -23,6 +23,8 @@ home-assistant.log
 home-assistant_v2.db
 *appdaemon.log
 *appdaemon-error.log
+*appdaemon.log.1
+*appdaemon-error.log.1
 
 apps/__pycache__/*
 tts

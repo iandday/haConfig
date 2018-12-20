@@ -8,4 +8,3 @@ sleep:
 awake:
   name: Awake
   initial: on
-#weather:
