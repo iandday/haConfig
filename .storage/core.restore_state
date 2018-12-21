@@ -1,58 +1,27 @@
 {
     "data": [
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Asleep"
-                },
-                "context": {
-                    "id": "7064688f0a7c4fe4948238167bdf30a9",
-                    "user_id": null
-                },
-                "entity_id": "input_boolean.sleep",
-                "last_changed": "2018-12-21T00:50:56.677996+00:00",
-                "last_updated": "2018-12-21T00:50:56.677996+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Awake"
-                },
-                "context": {
-                    "id": "97e432941f4e43fab38d5651d9d9908f",
-                    "user_id": null
-                },
-                "entity_id": "input_boolean.awake",
-                "last_changed": "2018-12-21T00:50:56.678178+00:00",
-                "last_updated": "2018-12-21T00:50:56.678178+00:00",
-                "state": "on"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Family Room TV Channels",
+                    "friendly_name": "TV channels",
+                    "icon": "mdi:play-box-outline",
                     "options": [
                         "-"
                     ]
                 },
                 "context": {
-                    "id": "3396287904d24a84ba921dbd40fcaf87",
-                    "user_id": null
+                    "id": "b64efcefbce745baa21ad527e11d7059",
+                    "user_id": "cadd86320faf47028b420ee7596d6962"
                 },
                 "entity_id": "input_select.kodi_results_familyroom",
-                "last_changed": "2018-12-21T00:50:56.678378+00:00",
-                "last_updated": "2018-12-21T00:50:56.678378+00:00",
+                "last_changed": "2018-12-21T12:40:24.640759+00:00",
+                "last_updated": "2018-12-21T12:40:57.232629+00:00",
                 "state": "-"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Kitchen TV Channels",
@@ -61,55 +30,17 @@
                     ]
                 },
                 "context": {
-                    "id": "aee73831a4304c74b38fe2f1a1c2834b",
+                    "id": "90596df8fb434e098a1916eb87d82588",
                     "user_id": null
                 },
                 "entity_id": "input_select.kodi_results_kitchen",
-                "last_changed": "2018-12-21T00:50:56.678782+00:00",
-                "last_updated": "2018-12-21T00:50:56.678782+00:00",
+                "last_changed": "2018-12-21T12:40:24.641015+00:00",
+                "last_updated": "2018-12-21T12:40:24.641015+00:00",
                 "state": "-"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Office TV Channels",
-                    "options": [
-                        "-"
-                    ]
-                },
-                "context": {
-                    "id": "940e570d51e54ec1bb34f2ceb14eb660",
-                    "user_id": null
-                },
-                "entity_id": "input_select.kodi_results_office",
-                "last_changed": "2018-12-21T00:50:56.678968+00:00",
-                "last_updated": "2018-12-21T00:50:56.678968+00:00",
-                "state": "-"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Bedroom TV Channels",
-                    "options": [
-                        "-"
-                    ]
-                },
-                "context": {
-                    "id": "e41c5920bec04b92a6f73bb540dbdbe8",
-                    "user_id": null
-                },
-                "entity_id": "input_select.kodi_results_bedroom",
-                "last_changed": "2018-12-21T00:50:56.679144+00:00",
-                "last_updated": "2018-12-21T00:50:56.679144+00:00",
-                "state": "-"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Activity",
@@ -121,89 +52,304 @@
                     ]
                 },
                 "context": {
-                    "id": "ff2bfad883234b63b318ce7d8a45fcd8",
+                    "id": "8dc00053ede74609a738825970980906",
                     "user_id": null
                 },
                 "entity_id": "input_select.familyroom_harmony",
-                "last_changed": "2018-12-21T00:50:56.679323+00:00",
-                "last_updated": "2018-12-21T00:50:56.679323+00:00",
+                "last_changed": "2018-12-21T12:40:24.641235+00:00",
+                "last_updated": "2018-12-21T12:40:24.641235+00:00",
                 "state": "PowerOff"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Speedtest Download",
-                    "icon": "mdi:speedometer",
-                    "unit_of_measurement": "Mbit/s"
+                    "friendly_name": "TV channels",
+                    "icon": "mdi:play-box-outline",
+                    "options": [
+                        "-",
+                        "4: NBC",
+                        "4.1: NBC-DT",
+                        "4.2: MeTV",
+                        "4.3: ION TV",
+                        "4.4: LAFF",
+                        "5: CW",
+                        "6.1: ABC-DT",
+                        "6.2: MyTV",
+                        "6.3: ANTENNA",
+                        "10.1: CBS-DT",
+                        "10.2: Heroes",
+                        "10.3: Decades",
+                        "11: QVC",
+                        "12: USA",
+                        "13: NICK",
+                        "15: JEWL",
+                        "16: HSN",
+                        "18: INSP",
+                        "19: CSPAN",
+                        "19.1: WCLL-CD",
+                        "20: ACC2",
+                        "21: ACC21",
+                        "23: Cartoon Network",
+                        "24: DISN",
+                        "25: LIFE",
+                        "26: E!",
+                        "27: Comedy",
+                        "28: VH1",
+                        "28.1: WTTE-DT",
+                        "28.2: TBD-TV",
+                        "28.3: STADIUM",
+                        "29: MTV",
+                        "30: FS",
+                        "31: GOLF",
+                        "32: FXX",
+                        "33: ESPN",
+                        "34: ESPN2",
+                        "34.1: WOSU-HD",
+                        "34.2: WOSU-D1",
+                        "34.3: WOSU-D2",
+                        "34.4: WOSU-D3",
+                        "35: TNTSD",
+                        "36: AMC",
+                        "37: BRAVO",
+                        "38: FOOD",
+                        "39: HGTV",
+                        "40: TCM",
+                        "41: FAM",
+                        "42: TLC",
+                        "43: NGEO",
+                        "44: SYFY",
+                        "44.1: W44DC-D",
+                        "45: A&E",
+                        "46: HIST",
+                        "47: NICKJr",
+                        "48: Discovery",
+                        "49: TBS",
+                        "50: CNBC",
+                        "51: CNN",
+                        "51.1: WSFJ",
+                        "52: HLN",
+                        "53: MSNBC",
+                        "53.1: WWHO-DT",
+                        "53.2: CHARGE!",
+                        "53.3: COMET",
+                        "54: ANPLT",
+                        "55: FOXNC",
+                        "56: Tennis",
+                        "57: STO",
+                        "58: Paramount",
+                        "59: BET",
+                        "60: CMT",
+                        "61: TRAVEL",
+                        "62: TWC",
+                        "63: EVINE",
+                        "64: FX",
+                        "65: LIFEM",
+                        "66: TVLND",
+                        "67: TRU",
+                        "68: OWN",
+                        "69: MTV2",
+                        "70: FS1",
+                        "71: HMM",
+                        "72: WE",
+                        "73: WGN",
+                        "74: SNDC",
+                        "75: IFC",
+                        "77: FXM",
+                        "78: FS2",
+                        "81: HLMN",
+                        "82: FOXBUSI",
+                        "83: ID",
+                        "87: BTN",
+                        "88: NBCSP",
+                        "89: CHEDDAR",
+                        "93: NICKTOO",
+                        "98: CAM98",
+                        "101: Decades",
+                        "102: TELEMUN",
+                        "105: FSALT",
+                        "112: H&I",
+                        "130: MeTV",
+                        "131: Get TV",
+                        "132: CHARGE!",
+                        "133: COMET",
+                        "134: ASN",
+                        "135: ANTV",
+                        "141: MyTV",
+                        "150: WOSU",
+                        "153: Create",
+                        "188: CSPAN2",
+                        "189: CSPAN3",
+                        "192: Bounce",
+                        "193: SONL",
+                        "201: CBSHD",
+                        "202: CBS HD",
+                        "203: NBCHD",
+                        "204: WWHO-DT",
+                        "205: PBSHD",
+                        "206: ABCHD",
+                        "208: FOXHD",
+                        "6: ABC"
+                    ]
                 },
                 "context": {
-                    "id": "3d84d71f6e3047b185b1c2905084f58f",
-                    "user_id": null
+                    "id": "f4c71c1f559f4616802a0a7acf20f09c",
+                    "user_id": "cadd86320faf47028b420ee7596d6962"
                 },
-                "entity_id": "sensor.speedtest_download",
-                "last_changed": "2018-12-21T00:50:56.679518+00:00",
-                "last_updated": "2018-12-21T00:50:56.679518+00:00",
-                "state": "102.95"
+                "entity_id": "input_select.kodi_results_office",
+                "last_changed": "2018-12-21T12:40:24.641445+00:00",
+                "last_updated": "2018-12-21T19:10:16.958944+00:00",
+                "state": "-"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Speedtest Ping",
-                    "icon": "mdi:speedometer",
-                    "unit_of_measurement": "ms"
+                    "friendly_name": "TV channels",
+                    "icon": "mdi:play-box-outline",
+                    "options": [
+                        "-"
+                    ]
                 },
                 "context": {
-                    "id": "e2037cf7397e45e78e05e17712da3af0",
-                    "user_id": null
+                    "id": "431c2ec0406e4851a32edc3b52900305",
+                    "user_id": "cadd86320faf47028b420ee7596d6962"
                 },
-                "entity_id": "sensor.speedtest_ping",
-                "last_changed": "2018-12-21T00:50:56.679700+00:00",
-                "last_updated": "2018-12-21T00:50:56.679700+00:00",
-                "state": "45.433"
+                "entity_id": "input_select.kodi_results_bedroom",
+                "last_changed": "2018-12-21T12:40:24.641638+00:00",
+                "last_updated": "2018-12-21T12:40:57.238612+00:00",
+                "state": "-"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Speedtest Upload",
-                    "icon": "mdi:speedometer",
-                    "unit_of_measurement": "Mbit/s"
+                    "friendly_name": "Awake"
                 },
                 "context": {
-                    "id": "56bb91397ddd4c359451a8873e419680",
+                    "id": "d46b8d12e04c40269474b90229e9b1e5",
                     "user_id": null
                 },
-                "entity_id": "sensor.speedtest_upload",
-                "last_changed": "2018-12-21T00:50:56.679874+00:00",
-                "last_updated": "2018-12-21T00:50:56.679874+00:00",
-                "state": "11.45"
+                "entity_id": "input_boolean.awake",
+                "last_changed": "2018-12-21T12:40:24.641840+00:00",
+                "last_updated": "2018-12-21T12:40:24.641840+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "friendly_name": "Doorbell",
-                    "id": "doorbell_notify",
-                    "last_triggered": null
+                    "friendly_name": "Asleep"
                 },
                 "context": {
-                    "id": "9cb32343971542019a9d7b09e0773a3a",
+                    "id": "14ebba48739f402abced70a74dfcf945",
                     "user_id": null
                 },
-                "entity_id": "automation.doorbell",
-                "last_changed": "2018-12-21T00:50:57.256377+00:00",
-                "last_updated": "2018-12-21T00:50:57.256377+00:00",
+                "entity_id": "input_boolean.sleep",
+                "last_changed": "2018-12-21T12:40:24.642028+00:00",
+                "last_updated": "2018-12-21T12:40:24.642028+00:00",
                 "state": "off"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "attribution": "Data retrieved from Speedtest by Ookla",
+                    "bytes_received": 114903816,
+                    "bytes_sent": 14155776,
+                    "friendly_name": "Speedtest Upload",
+                    "icon": "mdi:speedometer",
+                    "latency": 45.191,
+                    "server_country": "United States",
+                    "server_id": "3119",
+                    "server_name": "Columbus, OH",
+                    "unit_of_measurement": "Mbit/s"
+                },
+                "context": {
+                    "id": "c808a838c5014bfb9b30dfc4f4c9378d",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_upload",
+                "last_changed": "2018-12-21T19:30:45.026180+00:00",
+                "last_updated": "2018-12-21T19:30:45.026180+00:00",
+                "state": "11.18"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "attribution": "Data retrieved from Speedtest by Ookla",
+                    "bytes_received": 114903816,
+                    "bytes_sent": 14155776,
+                    "friendly_name": "Speedtest Ping",
+                    "icon": "mdi:speedometer",
+                    "latency": 45.191,
+                    "server_country": "United States",
+                    "server_id": "3119",
+                    "server_name": "Columbus, OH",
+                    "unit_of_measurement": "ms"
+                },
+                "context": {
+                    "id": "e7105c1c119c41af8b5d57054b49a48f",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_ping",
+                "last_changed": "2018-12-21T19:30:45.021382+00:00",
+                "last_updated": "2018-12-21T19:30:45.021382+00:00",
+                "state": "45.191"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "attribution": "Data retrieved from Speedtest by Ookla",
+                    "bytes_received": 114903816,
+                    "bytes_sent": 14155776,
+                    "friendly_name": "Speedtest Download",
+                    "icon": "mdi:speedometer",
+                    "latency": 45.191,
+                    "server_country": "United States",
+                    "server_id": "3119",
+                    "server_name": "Columbus, OH",
+                    "unit_of_measurement": "Mbit/s"
+                },
+                "context": {
+                    "id": "d06e8b8aebec4d29958eee7d49bb4bfa",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_download",
+                "last_changed": "2018-12-21T19:30:45.010163+00:00",
+                "last_updated": "2018-12-21T19:30:45.010163+00:00",
+                "state": "91.24"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Arriving Home",
+                    "id": "come_home",
+                    "last_triggered": "2018-12-21T15:59:02.054970+00:00"
+                },
+                "context": {
+                    "id": "9cff0bf59e1c43c892a66d02659b6d3e",
+                    "user_id": null
+                },
+                "entity_id": "automation.arriving_home",
+                "last_changed": "2018-12-21T12:40:26.697613+00:00",
+                "last_updated": "2018-12-21T15:59:02.055052+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Remote external update familyroom",
@@ -211,197 +357,17 @@
                     "last_triggered": null
                 },
                 "context": {
-                    "id": "3134919ff56049dea1ea020101e5597d",
+                    "id": "83a1df3588814421b68aec01e4b35507",
                     "user_id": null
                 },
                 "entity_id": "automation.remote_external_update_familyroom",
-                "last_changed": "2018-12-21T00:50:57.257018+00:00",
-                "last_updated": "2018-12-21T00:50:57.257018+00:00",
-                "state": "off"
+                "last_changed": "2018-12-21T12:40:26.698531+00:00",
+                "last_updated": "2018-12-21T12:40:26.698531+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Leaving Home",
-                    "id": "leave_home",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "f90aceaf7ac748589341e5cfa3ae727d",
-                    "user_id": null
-                },
-                "entity_id": "automation.leaving_home",
-                "last_changed": "2018-12-21T00:50:57.257442+00:00",
-                "last_updated": "2018-12-21T00:50:57.257442+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Cron",
-                    "id": "cron",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "bd6c1448115c4142b54fa607eb1016bf",
-                    "user_id": null
-                },
-                "entity_id": "automation.cron",
-                "last_changed": "2018-12-21T00:50:57.257855+00:00",
-                "last_updated": "2018-12-21T00:50:57.257855+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Arriving Home",
-                    "id": "come_home",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "faf4487cbd384bc397f9b5ead76c8fbe",
-                    "user_id": null
-                },
-                "entity_id": "automation.arriving_home",
-                "last_changed": "2018-12-21T00:50:57.258263+00:00",
-                "last_updated": "2018-12-21T00:50:57.258263+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Zwave Initialization",
-                    "id": "zwave ready",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "05909c7c4d924d4c9750c8a179bcb397",
-                    "user_id": null
-                },
-                "entity_id": "automation.zwave_initialization",
-                "last_changed": "2018-12-21T00:50:57.258729+00:00",
-                "last_updated": "2018-12-21T00:50:57.258729+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Bedtime Sleep Timer",
-                    "id": "bedtime",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "972de59109d04bc193bf58c227fdf520",
-                    "user_id": null
-                },
-                "entity_id": "automation.bedtime_sleep_timer",
-                "last_changed": "2018-12-21T00:50:57.259130+00:00",
-                "last_updated": "2018-12-21T00:50:57.259130+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Speed Test",
-                    "id": "speed_test",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "6c622a7c3a7f4f698165ff8d63ebbf96",
-                    "user_id": null
-                },
-                "entity_id": "automation.speed_test",
-                "last_changed": "2018-12-21T00:50:57.259525+00:00",
-                "last_updated": "2018-12-21T00:50:57.259525+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Wakeup",
-                    "id": "wakeup",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "bf8509b98c1c4959a472e7d85529968e",
-                    "user_id": null
-                },
-                "entity_id": "automation.wakeup",
-                "last_changed": "2018-12-21T00:50:57.259940+00:00",
-                "last_updated": "2018-12-21T00:50:57.259940+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Lights on when coming home",
-                    "id": "lights_on_arrive",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "0358e506f43843fc9a990bec82e7e56f",
-                    "user_id": null
-                },
-                "entity_id": "automation.lights_on_when_coming_home",
-                "last_changed": "2018-12-21T00:50:57.260336+00:00",
-                "last_updated": "2018-12-21T00:50:57.260336+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Available Update",
-                    "id": "new_version",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "16503e9d6d3f48f09f68587f523a2da6",
-                    "user_id": null
-                },
-                "entity_id": "automation.available_update",
-                "last_changed": "2018-12-21T00:50:57.260729+00:00",
-                "last_updated": "2018-12-21T00:50:57.260729+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
-            "state": {
-                "attributes": {
-                    "friendly_name": "Turn on lights at dusk",
-                    "id": "lights_on_at_dusk",
-                    "last_triggered": null
-                },
-                "context": {
-                    "id": "07afadb249ed45d9a0eced2640096203",
-                    "user_id": null
-                },
-                "entity_id": "automation.turn_on_lights_at_dusk",
-                "last_changed": "2018-12-21T00:50:57.261122+00:00",
-                "last_updated": "2018-12-21T00:50:57.261122+00:00",
-                "state": "off"
-            }
-        },
-        {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Forgot to Close Garage",
@@ -409,17 +375,35 @@
                     "last_triggered": null
                 },
                 "context": {
-                    "id": "7d7f9e4d6960467985e88fc3077fb0bb",
+                    "id": "fa7070ce741f463da919594f81f13f8b",
                     "user_id": null
                 },
                 "entity_id": "automation.forgot_to_close_garage",
-                "last_changed": "2018-12-21T00:50:57.261516+00:00",
-                "last_updated": "2018-12-21T00:50:57.261516+00:00",
-                "state": "off"
+                "last_changed": "2018-12-21T12:40:26.699457+00:00",
+                "last_updated": "2018-12-21T12:40:26.699457+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Turn on lights at dusk",
+                    "id": "lights_on_at_dusk",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "a8b79fa731754067ac1f9feb76d6d0f1",
+                    "user_id": null
+                },
+                "entity_id": "automation.turn_on_lights_at_dusk",
+                "last_changed": "2018-12-21T12:40:26.701406+00:00",
+                "last_updated": "2018-12-21T12:40:26.701406+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "Remote start activity familyroom",
@@ -427,38 +411,200 @@
                     "last_triggered": null
                 },
                 "context": {
-                    "id": "30701b7f7bbd4979943ebde159bcaaa8",
+                    "id": "046c0af8f56442709f089cf9593c12ee",
                     "user_id": null
                 },
                 "entity_id": "automation.remote_start_activity_familyroom",
-                "last_changed": "2018-12-21T00:50:57.261917+00:00",
-                "last_updated": "2018-12-21T00:50:57.261917+00:00",
-                "state": "off"
+                "last_changed": "2018-12-21T12:40:26.704100+00:00",
+                "last_updated": "2018-12-21T12:40:26.704100+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Doorbell",
+                    "id": "doorbell_notify",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "2e568d728ccf49b6a7d98cd23814ae09",
+                    "user_id": null
+                },
+                "entity_id": "automation.doorbell",
+                "last_changed": "2018-12-21T12:40:26.705112+00:00",
+                "last_updated": "2018-12-21T12:40:26.705112+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
                     "friendly_name": "lights off at sunrise",
                     "id": "lights off at sunrise",
-                    "last_triggered": null
+                    "last_triggered": "2018-12-21T12:50:41.021950+00:00"
                 },
                 "context": {
-                    "id": "c31faa9f1ab443d09d9c7d78db5950ef",
+                    "id": "d7e7dfb3cf4145c896f1d65f36274922",
                     "user_id": null
                 },
                 "entity_id": "automation.lights_off_at_sunrise",
-                "last_changed": "2018-12-21T00:50:57.262307+00:00",
-                "last_updated": "2018-12-21T00:50:57.262307+00:00",
-                "state": "off"
+                "last_changed": "2018-12-21T12:40:26.706544+00:00",
+                "last_updated": "2018-12-21T12:50:41.022027+00:00",
+                "state": "on"
             }
         },
         {
-            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
             "state": {
                 "attributes": {
-                    "battery": 66,
+                    "friendly_name": "Available Update",
+                    "id": "new_version",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "e6040fae591e4ee68f4fb39bcc52c028",
+                    "user_id": null
+                },
+                "entity_id": "automation.available_update",
+                "last_changed": "2018-12-21T12:40:26.707671+00:00",
+                "last_updated": "2018-12-21T12:40:26.707671+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Lights on when coming home",
+                    "id": "lights_on_arrive",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "23020404c09c440b80eae5cfaa2c76ec",
+                    "user_id": null
+                },
+                "entity_id": "automation.lights_on_when_coming_home",
+                "last_changed": "2018-12-21T12:40:26.708732+00:00",
+                "last_updated": "2018-12-21T12:40:26.708732+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Wakeup",
+                    "id": "wakeup",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "d154ea8ce8384ff3be338781a5a70603",
+                    "user_id": null
+                },
+                "entity_id": "automation.wakeup",
+                "last_changed": "2018-12-21T12:40:26.710061+00:00",
+                "last_updated": "2018-12-21T12:40:26.710061+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Speed Test",
+                    "id": "speed_test",
+                    "last_triggered": "2018-12-21T18:30:32.327573+00:00"
+                },
+                "context": {
+                    "id": "8affd4cb50d549ed90578c1e32a0dba5",
+                    "user_id": null
+                },
+                "entity_id": "automation.speed_test",
+                "last_changed": "2018-12-21T12:40:26.712349+00:00",
+                "last_updated": "2018-12-21T18:30:32.327693+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Zwave Initialization",
+                    "id": "zwave ready",
+                    "last_triggered": "2018-12-21T12:44:06.732247+00:00"
+                },
+                "context": {
+                    "id": "1a2664f872744c029b7986215a38abe5",
+                    "user_id": null
+                },
+                "entity_id": "automation.zwave_initialization",
+                "last_changed": "2018-12-21T12:40:26.713908+00:00",
+                "last_updated": "2018-12-21T12:44:06.732324+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Leaving Home",
+                    "id": "leave_home",
+                    "last_triggered": "2018-12-21T14:59:55.031288+00:00"
+                },
+                "context": {
+                    "id": "1c8fc4b7bcdf4c7299bc6140962b3f3d",
+                    "user_id": null
+                },
+                "entity_id": "automation.leaving_home",
+                "last_changed": "2018-12-21T12:40:26.715142+00:00",
+                "last_updated": "2018-12-21T14:59:55.033239+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Bedtime Sleep Timer",
+                    "id": "bedtime",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "e683aebb7ce54d55a7150a260f47c920",
+                    "user_id": null
+                },
+                "entity_id": "automation.bedtime_sleep_timer",
+                "last_changed": "2018-12-21T12:40:26.716128+00:00",
+                "last_updated": "2018-12-21T12:40:26.716128+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Cron",
+                    "id": "cron",
+                    "last_triggered": "2018-12-21T12:40:26.726294+00:00"
+                },
+                "context": {
+                    "id": "8feb3e844d7444d584a7927ba1e73419",
+                    "user_id": null
+                },
+                "entity_id": "automation.cron",
+                "last_changed": "2018-12-21T12:40:26.718888+00:00",
+                "last_updated": "2018-12-21T12:40:26.726360+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T19:55:51.004924+00:00",
+            "state": {
+                "attributes": {
+                    "battery": 81,
                     "friendly_name": "Ian's-iPhone",
                     "gps_accuracy": 0,
                     "latitude": 40.107608,
@@ -467,12 +613,12 @@
                     "source_type": "router"
                 },
                 "context": {
-                    "id": "9c2399e4100e4036ac09996610595024",
+                    "id": "31ec4e10d1f94497a6a9251942717aaf",
                     "user_id": null
                 },
                 "entity_id": "device_tracker.iansiphone",
-                "last_changed": "2018-12-21T00:50:57.619407+00:00",
-                "last_updated": "2018-12-21T00:50:57.656317+00:00",
+                "last_changed": "2018-12-21T15:59:02.027453+00:00",
+                "last_updated": "2018-12-21T18:01:51.031574+00:00",
                 "state": "home"
             }
         }

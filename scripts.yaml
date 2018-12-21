@@ -89,10 +89,10 @@ bedroom_tv_on:
     data:
       entity_id: remote.bedroom
   - service: media_player.play_media
-    data:
+    data_template:
       entity_id: media_player.bedroom_tv
       media_content_type: CHANNEL
-      media_content_id: 132
+      media_content_id: '{% if (now().strftime("%H") | float) >= (5) and (now().strftime("%H") | float) <= (9) %}105{% elif (now().strftime("%H") | float) >= (10) and (now().strftime("%H") | float) <= (20) %}80{% else %}71{% endif %}'
 kitchen_tv_on:
   alias: Kitchen Tv On
   sequence:
@@ -100,10 +100,10 @@ kitchen_tv_on:
     data:
       entity_id: switch.kitchen_dual_switch_switch_2
   - service: media_player.play_media
-    data:
+    data_template:
       entity_id: media_player.kitchen_tv
       media_content_type: CHANNEL
-      media_content_id: 22
+      media_content_id: '{% if (now().strftime("%H") | float) >= (5) and (now().strftime("%H") | float) <= (9) %}105{% elif (now().strftime("%H") | float) >= (10) and (now().strftime("%H") | float) <= (20) %}80{% else %}71{% endif %}'
 office_tv_on:
   alias: Office Tv On
   sequence:
@@ -111,10 +111,10 @@ office_tv_on:
     data:
       entity_id: switch.office_dual_switch_switch_4
   - service: media_player.play_media
-    data:
+    data_template:
       entity_id: media_player.office_tv
       media_content_type: CHANNEL
-      media_content_id: 22
+      media_content_id: '{% if (now().strftime("%H") | float) >= (5) and (now().strftime("%H") | float) <= (9) %}105{% elif (now().strftime("%H") | float) >= (10) and (now().strftime("%H") | float) <= (20) %}80{% else %}71{% endif %}'
 familyroom_tv_off:
   alias: Turn Off
   sequence:

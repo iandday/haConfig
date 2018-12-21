@@ -42,6 +42,7 @@ class DynamicKodiInputSelect(hass.Hass):
             values = result['channels']
             data = [(r['label'], ('CHANNEL', r['channelid']))
                     for r in values]
+            self.log(data, level = 'INFO')
             self._ids_options.update(dict(zip(*zip(*data))))
             labels = list(list(zip(*data))[0])
             self.call_service('input_select/set_options',
