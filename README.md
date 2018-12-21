@@ -10,23 +10,44 @@ The script will add encrypted versions of the following sensitive files to each 
 
 * `secrets.yaml`
 * `phue.conf`
+* `known_devices.yaml`
+* `options.xml`
 * `ecobee.conf`
+* `.vaultCredential`
+* `.august.conf`
+* `.ios.conf`
+* `.storage/onboarding`
+* `.storage/core.entity_registry`
+* `.storage/core.device_registry`
+* `.storage/core.config_entries`
+* `.storage/auth_provider.homeassistant`
+* `.storage/auth`
 
 Once Ansible is installed perform the following steps to safely store credentials alongside the rest of your configuration files.
 
 1. Add the following entries to your `.gitignore` file
     * `secrets.yaml`
     * `phue.conf`
+    * `known_devices.yaml`
+    * `options.xml`
     * `ecobee.conf`
     * `.vaultCredential`
     * `.august.conf`
-2. Copy the file [pre-commit.sh](https://raw.githubusercontent.com/iandday/hassConfig/master/pre-commit.sh) to the root directory of your configuration repository and set it as executable.
-3. Create the file `.vaultCredential` in the root directory of your configuration repository.  There should only be one line in the file containing the password used to encrypt your sensitive files.  Make sure to apply appropriate permissions to this file (0600) or stricter.
-4. Enable the pre-commit git hook with the following command from the root of your configuration directory:
+    * `.ios.conf`
+    * `.storage/onboarding`
+    * `.storage/core.entity_registry`
+    * `.storage/core.device_registry`
+    * `.storage/core.config_entries`
+    * `.storage/auth_provider.homeassistant`
+    * `.storage/auth`
+
+
+1. Copy the file [pre-commit.sh](https://raw.githubusercontent.com/iandday/haConfig/master/pre-commit.sh) to the root directory of your configuration repository and set it as executable.
+2. Create the file `.vaultCredential` in the root directory of your configuration repository.  There should only be one line in the file containing the password used to encrypt your sensitive files.  Make sure to apply appropriate permissions to this file (0600) or stricter.
+3. Enable the pre-commit git hook with the following command from the root of your configuration directory:
 
     * `ln -s ../../pre-commit.sh .git/hooks/pre-commit`
 
 
 ## Customizations
 * [Custom Battery Levels](https://bonani.tech/track-battery-levels-with-home-assistant-and-custom-ui/)
-*  [Animated Forecast](https://www.reddit.com/r/homeassistant/comments/8dnxf0/_/)
