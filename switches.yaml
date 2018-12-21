@@ -3,7 +3,7 @@
 
 - platform: template
   switches:
-    # activates kodi start/stop script and uses tv power or harmony hub status to determine swtich state
+    # activates kodi start/stop script and uses tv power or harmony hub status to determine switch state
     bedroom_kodi:
       friendly_name: 'Watch TV'
       value_template:  >-

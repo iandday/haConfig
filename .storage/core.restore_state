@@ -1,0 +1,482 @@
+{
+    "data": [
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Asleep"
+                },
+                "context": {
+                    "id": "7064688f0a7c4fe4948238167bdf30a9",
+                    "user_id": null
+                },
+                "entity_id": "input_boolean.sleep",
+                "last_changed": "2018-12-21T00:50:56.677996+00:00",
+                "last_updated": "2018-12-21T00:50:56.677996+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Awake"
+                },
+                "context": {
+                    "id": "97e432941f4e43fab38d5651d9d9908f",
+                    "user_id": null
+                },
+                "entity_id": "input_boolean.awake",
+                "last_changed": "2018-12-21T00:50:56.678178+00:00",
+                "last_updated": "2018-12-21T00:50:56.678178+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Family Room TV Channels",
+                    "options": [
+                        "-"
+                    ]
+                },
+                "context": {
+                    "id": "3396287904d24a84ba921dbd40fcaf87",
+                    "user_id": null
+                },
+                "entity_id": "input_select.kodi_results_familyroom",
+                "last_changed": "2018-12-21T00:50:56.678378+00:00",
+                "last_updated": "2018-12-21T00:50:56.678378+00:00",
+                "state": "-"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Kitchen TV Channels",
+                    "options": [
+                        "-"
+                    ]
+                },
+                "context": {
+                    "id": "aee73831a4304c74b38fe2f1a1c2834b",
+                    "user_id": null
+                },
+                "entity_id": "input_select.kodi_results_kitchen",
+                "last_changed": "2018-12-21T00:50:56.678782+00:00",
+                "last_updated": "2018-12-21T00:50:56.678782+00:00",
+                "state": "-"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Office TV Channels",
+                    "options": [
+                        "-"
+                    ]
+                },
+                "context": {
+                    "id": "940e570d51e54ec1bb34f2ceb14eb660",
+                    "user_id": null
+                },
+                "entity_id": "input_select.kodi_results_office",
+                "last_changed": "2018-12-21T00:50:56.678968+00:00",
+                "last_updated": "2018-12-21T00:50:56.678968+00:00",
+                "state": "-"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Bedroom TV Channels",
+                    "options": [
+                        "-"
+                    ]
+                },
+                "context": {
+                    "id": "e41c5920bec04b92a6f73bb540dbdbe8",
+                    "user_id": null
+                },
+                "entity_id": "input_select.kodi_results_bedroom",
+                "last_changed": "2018-12-21T00:50:56.679144+00:00",
+                "last_updated": "2018-12-21T00:50:56.679144+00:00",
+                "state": "-"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Activity",
+                    "icon": "mdi:remote",
+                    "options": [
+                        "Kodi",
+                        "WatchaMovie",
+                        "PowerOff"
+                    ]
+                },
+                "context": {
+                    "id": "ff2bfad883234b63b318ce7d8a45fcd8",
+                    "user_id": null
+                },
+                "entity_id": "input_select.familyroom_harmony",
+                "last_changed": "2018-12-21T00:50:56.679323+00:00",
+                "last_updated": "2018-12-21T00:50:56.679323+00:00",
+                "state": "PowerOff"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Speedtest Download",
+                    "icon": "mdi:speedometer",
+                    "unit_of_measurement": "Mbit/s"
+                },
+                "context": {
+                    "id": "3d84d71f6e3047b185b1c2905084f58f",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_download",
+                "last_changed": "2018-12-21T00:50:56.679518+00:00",
+                "last_updated": "2018-12-21T00:50:56.679518+00:00",
+                "state": "102.95"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Speedtest Ping",
+                    "icon": "mdi:speedometer",
+                    "unit_of_measurement": "ms"
+                },
+                "context": {
+                    "id": "e2037cf7397e45e78e05e17712da3af0",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_ping",
+                "last_changed": "2018-12-21T00:50:56.679700+00:00",
+                "last_updated": "2018-12-21T00:50:56.679700+00:00",
+                "state": "45.433"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Speedtest Upload",
+                    "icon": "mdi:speedometer",
+                    "unit_of_measurement": "Mbit/s"
+                },
+                "context": {
+                    "id": "56bb91397ddd4c359451a8873e419680",
+                    "user_id": null
+                },
+                "entity_id": "sensor.speedtest_upload",
+                "last_changed": "2018-12-21T00:50:56.679874+00:00",
+                "last_updated": "2018-12-21T00:50:56.679874+00:00",
+                "state": "11.45"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Doorbell",
+                    "id": "doorbell_notify",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "9cb32343971542019a9d7b09e0773a3a",
+                    "user_id": null
+                },
+                "entity_id": "automation.doorbell",
+                "last_changed": "2018-12-21T00:50:57.256377+00:00",
+                "last_updated": "2018-12-21T00:50:57.256377+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Remote external update familyroom",
+                    "id": "remote_external_fr",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "3134919ff56049dea1ea020101e5597d",
+                    "user_id": null
+                },
+                "entity_id": "automation.remote_external_update_familyroom",
+                "last_changed": "2018-12-21T00:50:57.257018+00:00",
+                "last_updated": "2018-12-21T00:50:57.257018+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Leaving Home",
+                    "id": "leave_home",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "f90aceaf7ac748589341e5cfa3ae727d",
+                    "user_id": null
+                },
+                "entity_id": "automation.leaving_home",
+                "last_changed": "2018-12-21T00:50:57.257442+00:00",
+                "last_updated": "2018-12-21T00:50:57.257442+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Cron",
+                    "id": "cron",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "bd6c1448115c4142b54fa607eb1016bf",
+                    "user_id": null
+                },
+                "entity_id": "automation.cron",
+                "last_changed": "2018-12-21T00:50:57.257855+00:00",
+                "last_updated": "2018-12-21T00:50:57.257855+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Arriving Home",
+                    "id": "come_home",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "faf4487cbd384bc397f9b5ead76c8fbe",
+                    "user_id": null
+                },
+                "entity_id": "automation.arriving_home",
+                "last_changed": "2018-12-21T00:50:57.258263+00:00",
+                "last_updated": "2018-12-21T00:50:57.258263+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Zwave Initialization",
+                    "id": "zwave ready",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "05909c7c4d924d4c9750c8a179bcb397",
+                    "user_id": null
+                },
+                "entity_id": "automation.zwave_initialization",
+                "last_changed": "2018-12-21T00:50:57.258729+00:00",
+                "last_updated": "2018-12-21T00:50:57.258729+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Bedtime Sleep Timer",
+                    "id": "bedtime",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "972de59109d04bc193bf58c227fdf520",
+                    "user_id": null
+                },
+                "entity_id": "automation.bedtime_sleep_timer",
+                "last_changed": "2018-12-21T00:50:57.259130+00:00",
+                "last_updated": "2018-12-21T00:50:57.259130+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Speed Test",
+                    "id": "speed_test",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "6c622a7c3a7f4f698165ff8d63ebbf96",
+                    "user_id": null
+                },
+                "entity_id": "automation.speed_test",
+                "last_changed": "2018-12-21T00:50:57.259525+00:00",
+                "last_updated": "2018-12-21T00:50:57.259525+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Wakeup",
+                    "id": "wakeup",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "bf8509b98c1c4959a472e7d85529968e",
+                    "user_id": null
+                },
+                "entity_id": "automation.wakeup",
+                "last_changed": "2018-12-21T00:50:57.259940+00:00",
+                "last_updated": "2018-12-21T00:50:57.259940+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Lights on when coming home",
+                    "id": "lights_on_arrive",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "0358e506f43843fc9a990bec82e7e56f",
+                    "user_id": null
+                },
+                "entity_id": "automation.lights_on_when_coming_home",
+                "last_changed": "2018-12-21T00:50:57.260336+00:00",
+                "last_updated": "2018-12-21T00:50:57.260336+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Available Update",
+                    "id": "new_version",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "16503e9d6d3f48f09f68587f523a2da6",
+                    "user_id": null
+                },
+                "entity_id": "automation.available_update",
+                "last_changed": "2018-12-21T00:50:57.260729+00:00",
+                "last_updated": "2018-12-21T00:50:57.260729+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Turn on lights at dusk",
+                    "id": "lights_on_at_dusk",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "07afadb249ed45d9a0eced2640096203",
+                    "user_id": null
+                },
+                "entity_id": "automation.turn_on_lights_at_dusk",
+                "last_changed": "2018-12-21T00:50:57.261122+00:00",
+                "last_updated": "2018-12-21T00:50:57.261122+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Forgot to Close Garage",
+                    "id": "garage_notify",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "7d7f9e4d6960467985e88fc3077fb0bb",
+                    "user_id": null
+                },
+                "entity_id": "automation.forgot_to_close_garage",
+                "last_changed": "2018-12-21T00:50:57.261516+00:00",
+                "last_updated": "2018-12-21T00:50:57.261516+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Remote start activity familyroom",
+                    "id": "remote_activity_fr",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "30701b7f7bbd4979943ebde159bcaaa8",
+                    "user_id": null
+                },
+                "entity_id": "automation.remote_start_activity_familyroom",
+                "last_changed": "2018-12-21T00:50:57.261917+00:00",
+                "last_updated": "2018-12-21T00:50:57.261917+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "lights off at sunrise",
+                    "id": "lights off at sunrise",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "c31faa9f1ab443d09d9c7d78db5950ef",
+                    "user_id": null
+                },
+                "entity_id": "automation.lights_off_at_sunrise",
+                "last_changed": "2018-12-21T00:50:57.262307+00:00",
+                "last_updated": "2018-12-21T00:50:57.262307+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2018-12-21T00:50:58.417680+00:00",
+            "state": {
+                "attributes": {
+                    "battery": 66,
+                    "friendly_name": "Ian's-iPhone",
+                    "gps_accuracy": 0,
+                    "latitude": 40.107608,
+                    "longitude": -83.07525,
+                    "scanner": "UnifiScanner",
+                    "source_type": "router"
+                },
+                "context": {
+                    "id": "9c2399e4100e4036ac09996610595024",
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.iansiphone",
+                "last_changed": "2018-12-21T00:50:57.619407+00:00",
+                "last_updated": "2018-12-21T00:50:57.656317+00:00",
+                "state": "home"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}

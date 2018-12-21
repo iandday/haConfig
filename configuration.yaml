@@ -15,7 +15,7 @@ homeassistant:
     - /tmp    
   auth_providers:
    - type: homeassistant
-   - type: legacy_api_password
+   #- type: legacy_api_password
    - type: trusted_networks
 # View all events in a logbook
 logbook:
@@ -107,16 +107,13 @@ device_tracker:
 #  device_group: group.presence_devices
 #  disable_turn_off: 0   
 http:
-  api_password: !secret api_password
-  #use_x_forwarded_for: True
-  #cors_allowed_origins:
-  #  - https://google.com
-  #  - https://home-assistant.io
-  trusted_networks:
-    - 10.168.1.127
-    - 10.168.1.32
-  #ip_ban_enabled: True
-  #login_attempts_threshold: 5
+  trusted_networks: !secret trusted_networks
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret rev_prox_1
+    - !secret rev_prox_2
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
 notify:
   - platform: smtp
     name: gmail
